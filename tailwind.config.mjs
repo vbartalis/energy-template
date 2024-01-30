@@ -1,0 +1,57 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: "#f1fcf1",
+          100: "#e0f9df",
+          200: "#c2f1c1",
+          300: "#92e491",
+          400: "#5acf59",
+          500: "#34b433",
+          DEFAULT: "#228B22",
+          600: "#228b22",
+          700: "#207521",
+          800: "#1e5d1f",
+          900: "#1a4d1b",
+          950: "#092a0b",
+        },
+        secondary: {
+          50: "#f2f9fd",
+          100: "#e4f2fa",
+          200: "#c2e5f5",
+          DEFAULT: "#87CEEB",
+          300: "#87ceeb",
+          400: "#50b9e0",
+          500: "#2aa0cd",
+          600: "#1b81ae",
+          700: "#17678d",
+          800: "#175775",
+          900: "#184962",
+          950: "#102f41",
+        },
+        accent: {
+          50: "#ffffe7",
+          100: "#feffc1",
+          200: "#fffd86",
+          300: "#fff441",
+          400: "#ffe60d",
+          DEFAULT: "#FFD700",
+          500: "#ffd700",
+          600: "#d19e00",
+          700: "#a67102",
+          800: "#89580a",
+          900: "#74480f",
+          950: "#442604",
+        },
+      },
+      screens: {
+        midmd: "880px",
+      },
+    },
+  },
+  plugins: [],
+};
