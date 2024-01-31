@@ -2,55 +2,66 @@
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 import Service from "../cards/Service.astro";
+import Paragraph from "../shared/Paragraph.astro";
+
+import img from "../../assets/solar.jpg";
 
 type ServicesProps = {
   title: string;
-  description: string;
-  visual: string;
+  briefDescription: string;
+  visual: ImageMetadata;
 };
 
 export interface Props {
   className?: string;
 }
 
-const services: ServicesProps[] = [
-  {
-    title: "Solar Power Solutions",
-    description:
-      "Harness the power of the sun with our state-of-the-art solar panels. Generate clean energy for your home or business and reduce your carbon footprint.",
-    visual: "solar-panels-image.jpg",
-  },
-  {
-    title: "Wind Energy Harvesting",
-    description:
-      "Embrace the power of the wind. Our wind energy solutions provide a sustainable and efficient way to generate electricity, ensuring a greener future.",
-    visual: "wind-turbines-image.jpg",
-  },
-  {
-    title: "Hydropower Systems",
-    description:
-      "Flow with nature. Our hydropower systems harness the energy of flowing water, delivering reliable and eco-friendly electricity to your doorstep.",
-    visual: "hydropower-image.jpg",
-  },
-  {
-    title: "Energy Storage Solutions",
-    description:
-      "Store excess energy efficiently. Our cutting-edge energy storage solutions ensure uninterrupted power supply, even during cloudy days or low-wind periods.",
-    visual: "energy-storage-image.jpg",
-  },
-  {
-    title: "Smart Grid Technology",
-    description:
-      "Navigate the future with our smart grid technology. Optimize energy distribution, monitor consumption, and contribute to a more sustainable and efficient energy ecosystem.",
-    visual: "smart-grid-image.jpg",
-  },
-  {
-    title: "Energy-efficient Lighting",
-    description:
-      "Illuminate your space responsibly. Our energy-efficient lighting solutions provide bright, sustainable, and cost-effective illumination for homes and businesses.",
-    visual: "energy-efficient-lighting-image.jpg",
-  },
-];
+const servicesSection = {
+  title: "Our Sustainable Energy Solutions",
+  subheading:
+    "Experience a Revolution in Energy Solutions – Embrace Innovation, Embrace Sustainability. We're here to Empower Your Life and Spaces with Clean, Renewable Energy, Paving the Way for a Brighter and Greener Tomorrow.",
+  services: [
+    {
+      title: "Solar Power Solutions",
+      briefDescription:
+        "Harness the power of the sun with our state-of-the-art solar panels. Generate clean energy for your home or business and reduce your carbon footprint.",
+      visual: img,
+    },
+    {
+      title: "Wind Energy Harvesting",
+      briefDescription:
+        "Embrace the power of the wind. Our wind energy solutions provide a sustainable and efficient way to generate electricity, ensuring a greener future.",
+      visual: img,
+    },
+    {
+      title: "Hydropower Systems",
+      briefDescription:
+        "Flow with nature. Our hydropower systems harness the energy of flowing water, delivering reliable and eco-friendly electricity to your doorstep.",
+      visual: img,
+    },
+    {
+      title: "Energy Storage Solutions",
+      briefDescription:
+        "Store excess energy efficiently. Our cutting-edge energy storage solutions ensure uninterrupted power supply, even during cloudy days or low-wind periods.",
+      visual: img,
+    },
+    {
+      title: "Smart Grid Technology",
+      briefDescription:
+        "Navigate the future with our smart grid technology. Optimize energy distribution, monitor consumption, and contribute to a more sustainable and efficient energy ecosystem.",
+      visual: img,
+    },
+    {
+      title: "Energy-efficient Lighting",
+      briefDescription:
+        "Illuminate your space responsibly. Our energy-efficient lighting solutions provide bright, sustainable, and cost-effective illumination for homes and businesses.",
+      visual: img,
+    },
+  ],
+  callToAction:
+    "Discover the Future of Green Energy. Choose Your Sustainable Solution Today!",
+  buttonText: "Explore More",
+};
 
 const { className } = Astro.props;
 ---
@@ -59,22 +70,64 @@ const { className } = Astro.props;
   id="services"
   class=`relative dark:bg-gradient-to-br dark:from-indigo-800 dark:to-green-950  ${className}`
 >
-  <Container className="space-y-10 md:sapce-y-12">
-    <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Title className="">Our Sustainable Energy Solutions</Title>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-      {
-        services.map((service: ServicesProps) => {
-          return (
-            <Service
-              title={service.title}
-              description={service.description}
-              icon={service.visual}
-            />
-          );
-        })
-      }
+  <Container size="full">
+    <div class="grid grid-cols-6 gap-y-2 gap-x-4">
+      <div class="col-span-1"></div>
+      <div
+        class="col-span-2 grid grid-cols-subgrid grid-cols-1 content-between"
+      >
+        <Title className="">{servicesSection.title}</Title>
+        <Paragraph className="mt-3 text-lg md:text-xl">
+          {servicesSection.subheading}
+        </Paragraph>
+      </div>
+      <div class="col-span-1">
+        <Service
+          title={servicesSection.services[0].title}
+          description={servicesSection.services[0].briefDescription}
+          visual={servicesSection.services[0].visual}
+        />
+      </div>
+      <div class="col-span-1">
+        <Service
+          title={servicesSection.services[1].title}
+          description={servicesSection.services[1].briefDescription}
+          visual={servicesSection.services[1].visual}
+        />
+      </div>
+      <div class="col-span-1">
+        <Service
+          title={servicesSection.services[2].title}
+          description={servicesSection.services[2].briefDescription}
+          visual={servicesSection.services[2].visual}
+        />
+      </div>
+      <div class="col-span-2 place-items-start">
+        <!-- <Paragraph className="mt-3 text-lg md:text-xl">
+          {servicesSection.subheading}
+        </Paragraph> -->
+      </div>
+      <div class="col-span-1">
+        <Service
+          title={servicesSection.services[3].title}
+          description={servicesSection.services[3].briefDescription}
+          visual={servicesSection.services[3].visual}
+        />
+      </div>
+      <div class="col-span-1">
+        <Service
+          title={servicesSection.services[4].title}
+          description={servicesSection.services[4].briefDescription}
+          visual={servicesSection.services[4].visual}
+        />
+      </div>
+      <div class="col-span-1">
+        <Service
+          title={servicesSection.services[5].title}
+          description={servicesSection.services[5].briefDescription}
+          visual={servicesSection.services[5].visual}
+        />
+      </div>
     </div>
   </Container>
 </section>
