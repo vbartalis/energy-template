@@ -1,0 +1,80 @@
+---
+import Container from "../shared/Container.astro";
+import Title from "../shared/Title.astro";
+import Service from "../cards/Service.astro";
+
+type ServicesProps = {
+  title: string;
+  description: string;
+  visual: string;
+};
+
+export interface Props {
+  className?: string;
+}
+
+const services: ServicesProps[] = [
+  {
+    title: "Solar Power Solutions",
+    description:
+      "Harness the power of the sun with our state-of-the-art solar panels. Generate clean energy for your home or business and reduce your carbon footprint.",
+    visual: "solar-panels-image.jpg",
+  },
+  {
+    title: "Wind Energy Harvesting",
+    description:
+      "Embrace the power of the wind. Our wind energy solutions provide a sustainable and efficient way to generate electricity, ensuring a greener future.",
+    visual: "wind-turbines-image.jpg",
+  },
+  {
+    title: "Hydropower Systems",
+    description:
+      "Flow with nature. Our hydropower systems harness the energy of flowing water, delivering reliable and eco-friendly electricity to your doorstep.",
+    visual: "hydropower-image.jpg",
+  },
+  {
+    title: "Energy Storage Solutions",
+    description:
+      "Store excess energy efficiently. Our cutting-edge energy storage solutions ensure uninterrupted power supply, even during cloudy days or low-wind periods.",
+    visual: "energy-storage-image.jpg",
+  },
+  {
+    title: "Smart Grid Technology",
+    description:
+      "Navigate the future with our smart grid technology. Optimize energy distribution, monitor consumption, and contribute to a more sustainable and efficient energy ecosystem.",
+    visual: "smart-grid-image.jpg",
+  },
+  {
+    title: "Energy-efficient Lighting",
+    description:
+      "Illuminate your space responsibly. Our energy-efficient lighting solutions provide bright, sustainable, and cost-effective illumination for homes and businesses.",
+    visual: "energy-efficient-lighting-image.jpg",
+  },
+];
+
+const { className } = Astro.props;
+---
+
+<section
+  id="services"
+  class=`relative dark:bg-gradient-to-br dark:from-indigo-800 dark:to-green-950  ${className}`
+>
+  <Container className="space-y-10 md:sapce-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <Title className="">Our Sustainable Energy Solutions</Title>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {
+        services.map((service: ServicesProps) => {
+          return (
+            <Service
+              title={service.title}
+              description={service.description}
+              icon={service.visual}
+            />
+          );
+        })
+      }
+    </div>
+  </Container>
+</section>

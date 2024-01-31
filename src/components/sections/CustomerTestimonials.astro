@@ -1,0 +1,52 @@
+---
+import Container from "../shared/Container.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import Testimonial from "../shared/Testimonial.astro";
+import Title from "../shared/Title.astro";
+
+const testimonialsSection = {
+  title: "What Our Customers Say",
+  subheading: "Hear from Those Who Have Embraced Sustainable Living",
+  testimonials: [
+    {
+      name: "Emily Johnson",
+      occupation: "Homeowner",
+      quote:
+        "Switching to [Company Name] was the best decision I made. Our home is now powered by clean energy, and I feel great knowing I'm contributing to a healthier planet.",
+    },
+    {
+      name: "Carlos Rodriguez",
+      occupation: "Business Owner",
+      quote:
+        "As a business owner, sustainability is crucial. [Company Name] provided us with a seamless transition to green energy, and we've seen a positive impact on both the environment and our operating costs.",
+    },
+    {
+      name: "Sophie Chen",
+      occupation: "Environmental Advocate",
+      quote:
+        "I'm passionate about the environment, and [Company Name] aligns perfectly with my values. Their commitment to renewable energy and reducing carbon footprint is commendable.",
+    },
+  ],
+  visual: "customer-testimonials-image.jpg",
+  callToAction: "Join Our Growing Community of Satisfied Customers",
+  button: "Get Started",
+};
+---
+
+<section id="features">
+  <Container className="flex flex-col items-center gap-10 lg:gap-12">
+    <Title>{testimonialsSection.title}</Title>
+    <Paragraph className="mt-8">
+      {testimonialsSection.subheading}
+    </Paragraph>
+    <div
+      class="flex flex-col midmd:flex-row mt-8 space-y-4 text-heading-3 font-medium"
+    >
+      {
+        testimonialsSection.testimonials.map((testimonial) => {
+          return <Testimonial />;
+        })
+      }
+    </div>
+  </Container>
+</section>

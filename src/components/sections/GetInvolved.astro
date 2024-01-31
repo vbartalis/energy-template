@@ -1,0 +1,85 @@
+---
+import Container from "../shared/Container.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import Title from "../shared/Title.astro";
+
+const getInvolvedSection = {
+  title: "Get Involved",
+  subheading: "Join Us in Building a Sustainable Future",
+  initiatives: [
+    {
+      title: "Community Outreach",
+      description:
+        "Discover our community initiatives aimed at promoting awareness and education on sustainable living. Join us in creating a positive impact together.",
+      visual: "community-outreach-image.jpg",
+    },
+    {
+      title: "Green Events",
+      description:
+        "Participate in our upcoming green events. From tree-planting drives to eco-friendly workshops, be a part of the movement towards a healthier planet.",
+      visual: "green-events-image.jpg",
+    },
+    {
+      title: "Partnerships for Sustainability",
+      description:
+        "Explore our partnerships with organizations dedicated to environmental conservation. Learn how you can contribute to sustainable practices through collaboration.",
+      visual: "partnerships-image.jpg",
+    },
+  ],
+  visual: "get-involved-section-image.jpg",
+  callToAction: "Take Action Today for a Greener Tomorrow",
+  button: "Join Our Initiatives",
+};
+
+type InitiativesProps = {
+  title: string;
+  description: string;
+  visual: string;
+  // img: ImageMetadata;
+};
+
+export interface Props {
+  className?: string;
+}
+const { className } = Astro.props;
+---
+
+<section
+  id="services"
+  class=`relative dark:bg-gradient-to-br dark:from-indigo-800 dark:to-green-950  ${className}`
+>
+  <Container className="space-y-10 md:sapce-y-12">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <Title className="">{getInvolvedSection.title}</Title>
+      <Paragraph className="mt-3 text-lg md:text-xl">
+        {getInvolvedSection.subheading}
+      </Paragraph>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {
+        getInvolvedSection.initiatives.map((initiative: InitiativesProps) => {
+          return (
+            <div
+              class="p-5 sm:p-6 lg:p-8 relative overflow-hidden rounded-3xl shadow-md shadow-slate-700 dark:shadow-slate-900
+  bg-gradient-to-tr from-slate-100/70 to-zinc-200/60 dark:from-slate-800/10 dark:to-zinc-800/10 backdrop-blur-md hover:bg-black/10 hover:dark:bg-slate-700/10"
+            >
+              <div class="rounded-xl p-3 text-heading-1 w-max relative bg-slate-200 dark:bg-slate-800">
+                <slot set:html={initiative.visual} />
+              </div>
+              <div class="mt-6 space-y-4 relative">
+                <h2 class="text-lg md:text-xl font-semibold text-heading-2">
+                  {initiative.title}
+                </h2>
+                <Paragraph>
+                  <div class="mt-8 space-y-4 text-heading-3 font-medium list-outside list-disc">
+                    {initiative.description}
+                  </div>
+                </Paragraph>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </Container>
+</section>

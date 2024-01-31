@@ -1,9 +1,19 @@
 ---
 import Container from "../shared/Container.astro";
 import { Image } from "astro:assets";
-// import heroImg from "../../assets/solar.jpg";
-import heroImg from "../../assets/solar-flip.jpg";
+import heroImg from "../../assets/solar.jpg";
+// import heroImg from "../../assets/solar-flip.jpg";
 import Paragraph from "../shared/Paragraph.astro";
+import CtaButton from "../shared/CtaButton.astro";
+
+const heroSection = {
+  headline1: "Powering Tomorrow,",
+  headline2: "Sustainably Today!",
+  subheading:
+    "Join us in the green energy revolution and be a part of a sustainable future for generations to come.",
+  buttonText: "Get Started",
+  backgroundImage: "hero-background-image.jpg",
+};
 
 export interface Props {
   className?: string;
@@ -20,19 +30,45 @@ const { className = "" } = Astro.props;
     height="2359"
     class="w-full h-[80vh] object-cover"
   />
-  <div class="absolute top-0 start-0 w-full h-[80vh] pt-[100px]">
-    <Container className="">
-      <div class="">
-        <h1
-          class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
-        font-bold text-heading-1"
-        >
-          Powering Tomorrow,<br /> Sustainably Today!
-        </h1>
-        <Paragraph className="mt-8 ">
-          Join the Green Energy Revolution with [Company Name].
-        </Paragraph>
-        <div></div>
+  <!-- <div
+    class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] bg-gradient-to-tr from-black/30 from-20%"
+  > -->
+  <div
+    class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] dark:bg-black/65 backdrop-blur-sm"
+  >
+    <Container className="grid grid-cols-2 h-full dark:text-white">
+      <div class="grid grid-cols-subgrid gap-4 col-span-2 place-items-end">
+        <div class="col-span-2 lg:col-span-1 place-items-start text-right">
+          <div>
+            <h1
+              class="text-3xl/normal sm:text-4xl/normal md:text-5xl/normal xl:text-6xl/normal font-bold text-heading-1 bg-white dark:bg-black inline shadow-[0px_0px_0px_10px_#fff] dark:shadow-[0px_0px_0px_10px_#000] box-decoration-clone"
+            >
+              {heroSection.headline1}
+            </h1>
+            <br />
+            <h1
+              class="text-3xl/normal sm:text-4xl/normal md:text-5xl/normal xl:text-6xl/normal font-bold text-heading-1 bg-white dark:bg-black inline shadow-[0px_0px_0px_10px_#fff] dark:shadow-[0px_0px_0px_10px_#000] box-decoration-clone"
+            >
+              {heroSection.headline2}
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-subgrid gap-4 col-span-2 place-items-center flex-col"
+      >
+        <div class="col-span-2 md:text-right md:col-span-1">
+          <Paragraph
+            className="bg-white dark:bg-black inline shadow-[0px_0px_0px_10px_#fff] dark:shadow-[0px_0px_0px_10px_#000] box-decoration-clone md:text-lg/loose leading-loose"
+          >
+            {heroSection.subheading}
+            <!-- Join the Green Energy Revolution with [Company Name]. -->
+          </Paragraph>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <CtaButton />
+        </div>
       </div>
     </Container>
   </div>
