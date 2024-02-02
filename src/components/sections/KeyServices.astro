@@ -5,6 +5,7 @@ import Service from "../cards/Service.astro";
 import Paragraph from "../shared/Paragraph.astro";
 
 import img from "../../assets/solar.jpg";
+import Title2 from "../shared/Title2.astro";
 
 type ServicesProps = {
   title: string;
@@ -70,58 +71,55 @@ const { className } = Astro.props;
   id="services"
   class=`relative dark:bg-gradient-to-br dark:from-indigo-800 dark:to-green-950  ${className}`
 >
-  <Container size="full">
-    <div class="grid grid-cols-6 gap-y-2 gap-x-4">
-      <div class="col-span-1"></div>
-      <div
-        class="col-span-2 grid grid-cols-subgrid grid-cols-1 content-between"
-      >
-        <Title className="">{servicesSection.title}</Title>
-        <Paragraph className="mt-3 text-lg md:text-xl">
-          {servicesSection.subheading}
-        </Paragraph>
+  <Container size="wide">
+    <div
+      class="grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-2 gap-x-4"
+    >
+      <div class="md:col-span-2 flex flex-col">
+        <Title2 className="">{servicesSection.title}</Title2>
+        <div class="h-full flex flex-col justify-center">
+          <Paragraph className="text-lg md:text-xl">
+            {servicesSection.subheading}
+          </Paragraph>
+        </div>
       </div>
-      <div class="col-span-1">
+      <div class="">
         <Service
           title={servicesSection.services[0].title}
           description={servicesSection.services[0].briefDescription}
           visual={servicesSection.services[0].visual}
         />
       </div>
-      <div class="col-span-1">
+      <div class="">
         <Service
           title={servicesSection.services[1].title}
           description={servicesSection.services[1].briefDescription}
           visual={servicesSection.services[1].visual}
         />
       </div>
-      <div class="col-span-1">
+      <div class="">
         <Service
           title={servicesSection.services[2].title}
           description={servicesSection.services[2].briefDescription}
           visual={servicesSection.services[2].visual}
         />
       </div>
-      <div class="col-span-2 place-items-start">
-        <!-- <Paragraph className="mt-3 text-lg md:text-xl">
-          {servicesSection.subheading}
-        </Paragraph> -->
-      </div>
-      <div class="col-span-1">
+      <!-- <div class="col-span-2 place-items-start"></div> -->
+      <div class="">
         <Service
           title={servicesSection.services[3].title}
           description={servicesSection.services[3].briefDescription}
           visual={servicesSection.services[3].visual}
         />
       </div>
-      <div class="col-span-1">
+      <div class="">
         <Service
           title={servicesSection.services[4].title}
           description={servicesSection.services[4].briefDescription}
           visual={servicesSection.services[4].visual}
         />
       </div>
-      <div class="col-span-1">
+      <div class="">
         <Service
           title={servicesSection.services[5].title}
           description={servicesSection.services[5].briefDescription}

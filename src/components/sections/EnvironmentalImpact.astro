@@ -2,7 +2,9 @@
 import Container from "../shared/Container.astro";
 import CtaButton from "../shared/CtaButton.astro";
 import Paragraph from "../shared/Paragraph.astro";
+import SubTitle2 from "../shared/SubTitle2.astro";
 import Title from "../shared/Title.astro";
+import Title2 from "../shared/Title2.astro";
 
 const environmentalImpactSection = {
   title: "Environmental Impact",
@@ -25,10 +27,10 @@ const environmentalImpactSection = {
 <section id="features">
   <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
     <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
-      <Title>{environmentalImpactSection.title}</Title>
-      <Paragraph className="mt-8">
+      <Title2>{environmentalImpactSection.title}</Title2>
+      <SubTitle2 className="mt-8">
         {environmentalImpactSection.subheading}
-      </Paragraph>
+      </SubTitle2>
       <Paragraph className="mt-2">
         {environmentalImpactSection.description}
       </Paragraph>

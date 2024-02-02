@@ -1,7 +1,10 @@
 ---
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
+import SubTitle2 from "../shared/SubTitle2.astro";
 import Title from "../shared/Title.astro";
+import Title2 from "../shared/Title2.astro";
+import Title3 from "../shared/Title3.astro";
 
 const getInvolvedSection = {
   title: "Get Involved",
@@ -50,10 +53,10 @@ const { className } = Astro.props;
 >
   <Container className="space-y-10 md:sapce-y-12">
     <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Title className="">{getInvolvedSection.title}</Title>
-      <Paragraph className="mt-3 text-lg md:text-xl">
+      <Title2 className="">{getInvolvedSection.title}</Title2>
+      <SubTitle2 className="mt-3">
         {getInvolvedSection.subheading}
-      </Paragraph>
+      </SubTitle2>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
@@ -67,13 +70,16 @@ const { className } = Astro.props;
                 <slot set:html={initiative.visual} />
               </div>
               <div class="mt-6 space-y-4 relative">
+                <!--
                 <h2 class="text-lg md:text-xl font-semibold text-heading-2">
+                   {initiative.title}
+                 </h2>
+                 -->
+                <Title3>
                   {initiative.title}
-                </h2>
+                </Title3>
                 <Paragraph>
-                  <div class="mt-8 space-y-4 text-heading-3 font-medium list-outside list-disc">
                     {initiative.description}
-                  </div>
                 </Paragraph>
               </div>
             </div>

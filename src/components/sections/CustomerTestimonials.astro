@@ -1,8 +1,10 @@
 ---
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
+import SubTitle2 from "../shared/SubTitle2.astro";
 import Testimonial from "../shared/Testimonial.astro";
 import Title from "../shared/Title.astro";
+import Title2 from "../shared/Title2.astro";
 
 const testimonialsSection = {
   title: "What Our Customers Say",
@@ -35,10 +37,10 @@ const testimonialsSection = {
 
 <section id="features">
   <Container className="flex flex-col items-center gap-10 lg:gap-12">
-    <Title>{testimonialsSection.title}</Title>
-    <Paragraph className="mt-8">
+    <Title2>{testimonialsSection.title}</Title2>
+    <SubTitle2 className="mt-8">
       {testimonialsSection.subheading}
-    </Paragraph>
+    </SubTitle2>
     <div
       class="flex flex-col midmd:flex-row mt-8 space-y-4 text-heading-3 font-medium"
     >

@@ -5,6 +5,8 @@ import Title from "../shared/Title.astro";
 
 import img from "../../assets/solar.jpg";
 import FeaturedProject from "../cards/FeaturedProject.astro";
+import Title2 from "../shared/Title2.astro";
+import SubTitle2 from "../shared/SubTitle2.astro";
 
 const projectsSection = {
   title: "Featured Projects",
@@ -52,10 +54,10 @@ const { className } = Astro.props;
 >
   <Container className="space-y-10 md:sapce-y-12">
     <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Title className="">{projectsSection.title}</Title>
-      <Paragraph className="mt-3 text-lg md:text-xl">
+      <Title2 className="">{projectsSection.title}</Title2>
+      <SubTitle2 className="mt-3 text-lg md:text-xl">
         {projectsSection.subheading}
-      </Paragraph>
+      </SubTitle2>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {

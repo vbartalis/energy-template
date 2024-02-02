@@ -5,6 +5,9 @@ import heroImg from "../../assets/solar.jpg";
 // import heroImg from "../../assets/solar-flip.jpg";
 import Paragraph from "../shared/Paragraph.astro";
 import CtaButton from "../shared/CtaButton.astro";
+import Title from "../shared/Title.astro";
+import SubTitle2 from "../shared/SubTitle2.astro";
+import SubTitle from "../shared/SubTitle.astro";
 
 const heroSection = {
   headline1: "Powering Tomorrow,",
@@ -37,17 +40,18 @@ const { className = "" } = Astro.props;
       <div class="grid grid-cols-subgrid gap-4 col-span-2 place-items-end">
         <div class="col-span-2 lg:col-span-1 place-items-start text-right">
           <div>
-            <h1
+            <!-- <h1
               class="text-3xl/normal sm:text-4xl/normal md:text-5xl/normal xl:text-6xl/normal font-bold text-heading-1 bg-white dark:bg-black inline shadow-[0px_0px_0px_10px_#fff] dark:shadow-[0px_0px_0px_10px_#000] box-decoration-clone"
             >
               {heroSection.headline1}
-            </h1>
-            <br />
-            <h1
-              class="text-3xl/normal sm:text-4xl/normal md:text-5xl/normal xl:text-6xl/normal font-bold text-heading-1 bg-white dark:bg-black inline shadow-[0px_0px_0px_10px_#fff] dark:shadow-[0px_0px_0px_10px_#000] box-decoration-clone"
-            >
+              <br />
               {heroSection.headline2}
-            </h1>
+            </h1> -->
+            <Title>
+              {heroSection.headline1}
+              <br />
+              {heroSection.headline2}
+            </Title>
           </div>
         </div>
       </div>
@@ -56,12 +60,14 @@ const { className = "" } = Astro.props;
         class="grid grid-cols-subgrid gap-4 col-span-2 place-items-center flex-col"
       >
         <div class="col-span-2 md:text-right md:col-span-1">
-          <Paragraph
+          <!-- <Paragraph
             className="bg-white dark:bg-black inline shadow-[0px_0px_0px_10px_#fff] dark:shadow-[0px_0px_0px_10px_#000] box-decoration-clone md:text-lg/loose leading-loose"
           >
             {heroSection.subheading}
-            <!-- Join the Green Energy Revolution with [Company Name]. -->
-          </Paragraph>
+          </Paragraph> -->
+          <SubTitle>
+            {heroSection.subheading}
+          </SubTitle>
         </div>
         <div class="col-span-2 md:col-span-1">
           <CtaButton />
