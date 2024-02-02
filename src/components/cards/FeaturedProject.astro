@@ -1,0 +1,38 @@
+---
+import Paragraph from "../shared/Paragraph.astro";
+import { Image } from "astro:assets";
+
+export interface Props {
+  title: string;
+  description: string;
+  visual: ImageMetadata;
+}
+
+const { title, description, visual } = Astro.props;
+---
+
+<div
+  class="relative overflow-hidden rounded-lg h-full
+  bg-gradient-to-tr from-slate-100/70 to-zinc-200/60 dark:from-slate-800/10 dark:to-zinc-800/10 backdrop-blur-md hover:bg-black/10 hover:dark:bg-slate-700/10"
+>
+  <Image
+    src={visual}
+    alt="Hero"
+    width="2350"
+    height="2359"
+    class="w-full h-96 object-cover"
+  />
+
+  <div
+    class="absolute grid grid-cols-1 content-between top-0 start-0 w-full h-full bg-black/60"
+  >
+    <h2 class="m-6 text-lg md:text-xl font-semibold text-white">
+      {title}
+    </h2>
+    <div class="self-baseline m-6">
+      <div class="text-sm text-white">
+        {description}
+      </div>
+    </div>
+  </div>
+</div>

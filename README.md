@@ -45,3 +45,22 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Design
+
+Used Typography
+
+<!-- Headings -->
+<h1 class="text-4xl font-bold leading-tight mb-4">Heading 1</h1>
+<h2 class="text-3xl font-bold leading-tight mb-4">Heading 2</h2>
+<h3 class="text-2xl font-bold leading-tight mb-4">Heading 3</h3>
+
+<!-- Subheadings -->
+<p class="text-lg font-bold leading-tight mb-2 text-green-700">Subheading Example</p>
+
+<!-- Paragraphs -->
+<p class="text-base leading-relaxed mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+<!-- Call-to-Action Button -->
+
+<button class="text-lg font-bold uppercase py-2 px-4 bg-green-500 text-white rounded hover:bg-green-600">Get Started</button>

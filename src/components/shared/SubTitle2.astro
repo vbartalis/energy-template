@@ -1,0 +1,11 @@
+---
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<p class={`text-lg font-bold leading-tight mb-2 ${className}`}>
+  <slot />
+</p>

@@ -3,6 +3,9 @@ import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 
+import img from "../../assets/solar.jpg";
+import FeaturedProject from "../cards/FeaturedProject.astro";
+
 const projectsSection = {
   title: "Featured Projects",
   subheading: "Explore Our Successful Green Energy Endeavors",
@@ -11,19 +14,19 @@ const projectsSection = {
       title: "Solar-Powered Community",
       description:
         "Empowering a community with sustainable solar energy solutions. Learn how [Company Name] brought clean and affordable electricity to homes, schools, and businesses.",
-      visual: "solar-community-project-image.jpg",
+      visual: img,
     },
     {
       title: "Wind Farm Innovation",
       description:
         "Revolutionizing wind energy with our innovative wind farm. Discover how [Company Name] is harnessing the power of the wind to create a greener and more sustainable future.",
-      visual: "wind-farm-project-image.jpg",
+      visual: img,
     },
     {
       title: "Hydropower Plant Success",
       description:
         "A journey into our hydropower success story. Explore how [Company Name] transforms the energy of flowing water into a reliable and eco-friendly power source.",
-      visual: "hydropower-plant-project-image.jpg",
+      visual: img,
     },
   ],
   visual: "projects-section-image.jpg",
@@ -34,8 +37,7 @@ const projectsSection = {
 type ProjectsProps = {
   title: string;
   description: string;
-  visual: string;
-  // img: ImageMetadata;
+  visual: ImageMetadata;
 };
 
 export interface Props {
@@ -59,24 +61,11 @@ const { className } = Astro.props;
       {
         projectsSection.projects.map((project: ProjectsProps) => {
           return (
-            <div
-              class="p-5 sm:p-6 lg:p-8 relative overflow-hidden rounded-3xl shadow-md shadow-slate-700 dark:shadow-slate-900
-  bg-gradient-to-tr from-slate-100/70 to-zinc-200/60 dark:from-slate-800/10 dark:to-zinc-800/10 backdrop-blur-md hover:bg-black/10 hover:dark:bg-slate-700/10"
-            >
-              <div class="rounded-xl p-3 text-heading-1 w-max relative bg-slate-200 dark:bg-slate-800">
-                <slot set:html={project.visual} />
-              </div>
-              <div class="mt-6 space-y-4 relative">
-                <h2 class="text-lg md:text-xl font-semibold text-heading-2">
-                  {project.title}
-                </h2>
-                <Paragraph>
-                  <div class="mt-8 space-y-4 text-heading-3 font-medium list-outside list-disc">
-                    {project.description}
-                  </div>
-                </Paragraph>
-              </div>
-            </div>
+            <FeaturedProject
+              title={project.title}
+              description={project.description}
+              visual={project.visual}
+            />
           );
         })
       }

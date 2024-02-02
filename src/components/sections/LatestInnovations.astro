@@ -4,12 +4,18 @@ import Paragraph from '../shared/Paragraph.astro';
 import Title from '../shared/Title.astro';
 import { Image } from "astro:assets";
 
+import imgGrid from "../../assets/grid.jpg"
+import imgSolar from "../../assets/solar2.jpg"
+import imgWind from "../../assets/wind.jpg"
+import Title2 from '../shared/Title2.astro';
+import SubTitle2 from '../shared/SubTitle2.astro';
+import Title3 from '../shared/Title3.astro';
+
 
 type InnovationsProps = {
   title: string;
   description: string;
-  visual: string;
-  // img: ImageMetadata;
+  visual: ImageMetadata;
 };
 
 const innovationsSection = {
@@ -20,19 +26,19 @@ const innovationsSection = {
       title: "Smart Grid Integration",
       description:
         "Our smart grid technology optimizes energy distribution, reduces wastage, and enhances overall grid efficiency. Stay connected and in control with our innovative solutions.",
-      visual: "smart-grid-innovation-image.jpg",
+      visual: imgGrid
     },
     {
       title: "Advanced Solar Panel Design",
       description:
         "Experience improved solar efficiency with our advanced solar panel designs. Our innovative technologies capture more sunlight, maximizing energy production for your home or business.",
-      visual: "solar-panel-innovation-image.jpg",
+      visual: imgSolar
     },
     {
       title: "Next-gen Wind Turbines",
       description:
         "Elevate your wind energy experience with our next-generation wind turbines. Sleek design, enhanced efficiency, and minimal environmental impact define our commitment to innovation.",
-      visual: "wind-turbine-innovation-image.jpg",
+      visual: imgWind
     },
   ],
   visual: "innovations-section-image.jpg",
@@ -47,13 +53,13 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section id="solutions" class=`flex flex-col bg-orange-100 ${className}`>
+<section id="innovations" class=`flex flex-col bg-orange-100 ${className}`>
   <Container>
     <div class="flex flex-col items-center justify-center text-center">
-      <Title>{innovationsSection.title}</Title>
-      <Paragraph className="mt-3 text-lg md:text-xl">
+      <Title2>{innovationsSection.title}</Title2>
+      <SubTitle2 className="mt-3 text-lg md:text-xl">
         {innovationsSection.subheading}
-      </Paragraph>
+      </SubTitle2>
     </div>
   </Container>
   {
@@ -67,17 +73,17 @@ const { className } = Astro.props;
         const bgColor = ""
           
         return (
-          <div class={`w-100 py-10 md:py-16 ${bgColor}`}>
+          <div class={`w-100 ${bgColor} pt-10`}>
             <div
               class={`flex flex-col gap-10 lg:gap-12 ${flexRow} mx-auto max-w-7xl w-full`}
             >
               <div class="max-w-md mx-auto w-11/12 flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
-                <Title>
+                <Title3>
                   {solution.title}
                   <!--
                     <GradiantText>{solution.title}</GradiantText>
                      -->
-                </Title>
+                </Title3>
                 <!--<Paragraph className="mt-8 font-medium text:lg md:text-2xl">
                   {solution.description}
                 </Paragraph>-->
@@ -92,14 +98,14 @@ const { className } = Astro.props;
               </div>
 
               <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
-                <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-                  <!-- <Image
+                <div class="w-full max-h-[50vh] sm:h-96 midmd:h-full relative">
+                  <Image
                     src={solution.visual}
                     alt="banner image"
                     width="1240"
                     height="1385"
-                    class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full rounded-3xl object-cover"
-                  />-->
+                    class="rounded-3xl object-cover h-full"
+                  />
                 </div>
               </div>
             </div>
