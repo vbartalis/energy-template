@@ -33,46 +33,47 @@ const { className = "" } = Astro.props;
     height="2359"
     class="w-full h-[80vh] object-cover"
   />
-  <div
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+
+  <!-- <div
     class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] dark:bg-black/65 backdrop-blur-sm"
-  >
+  > -->
+  <!-- <div class="absolute top-0 start-0 w-full h-[80vh] pt-[100px]">
     <Container className="grid grid-cols-2 h-full dark:text-white">
       <div class="grid grid-cols-subgrid gap-4 col-span-2 place-items-end">
-        <div class="col-span-2 lg:col-span-1 place-items-start text-right">
-          <div>
-            <!-- <h1
-              class="text-3xl/normal sm:text-4xl/normal md:text-5xl/normal xl:text-6xl/normal font-bold text-heading-1 bg-white dark:bg-black inline shadow-[0px_0px_0px_10px_#fff] dark:shadow-[0px_0px_0px_10px_#000] box-decoration-clone"
-            >
-              {heroSection.headline1}
-              <br />
-              {heroSection.headline2}
-            </h1> -->
-            <Title>
-              {heroSection.headline1}
-              <br />
-              {heroSection.headline2}
-            </Title>
-          </div>
-        </div>
+      <div class="col-span-2 lg:col-span-1 place-items-start text-right">
+        <Title className="text-white">
+          {heroSection.headline1}
+          <br />
+          {heroSection.headline2}
+        </Title>
+        <SubTitle className="text-white">
+          {heroSection.subheading}
+        </SubTitle>
+        <CtaButton />
       </div>
-
-      <div
-        class="grid grid-cols-subgrid gap-4 col-span-2 place-items-center flex-col"
-      >
-        <div class="col-span-2 md:text-right md:col-span-1">
-          <!-- <Paragraph
-            className="bg-white dark:bg-black inline shadow-[0px_0px_0px_10px_#fff] dark:shadow-[0px_0px_0px_10px_#000] box-decoration-clone md:text-lg/loose leading-loose"
-          >
-            {heroSection.subheading}
-          </Paragraph> -->
-          <SubTitle>
-            {heroSection.subheading}
-          </SubTitle>
-        </div>
-        <div class="col-span-2 md:col-span-1">
-          <CtaButton />
-        </div>
       </div>
     </Container>
+  </div> -->
+  <div
+    class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] flex flex-col justify-center"
+  >
+    <div class="place-items-center flex flex-col text-center">
+      <Title
+        className="text-white bg-black/20 shadow-[0px_0px_80px_80px_rgba(0,0,0,0.2)] rounded-2xl"
+      >
+        {heroSection.headline1}
+        <!-- <br /> -->
+        {heroSection.headline2}
+      </Title>
+      <SubTitle
+        className="text-white bg-black/20 shadow-[0px_0px_40px_40px_rgba(0,0,0,0.2)] rounded-2xl pt-10"
+      >
+        {heroSection.subheading}
+      </SubTitle>
+      <div class="pt-10">
+        <CtaButton />
+      </div>
+    </div>
   </div>
 </section>
