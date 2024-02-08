@@ -8,16 +8,24 @@ const { className, variant } = Astro.props;
 
 const getThemeStyle = (variant: "primary" | "secondary") => {
   if (variant === "primary") {
-    return "bg-primary border-transparent relative after:bg-[#172554] hover:border-[#172554]";
+    return "bg-primary relative border-transparent shadow-aesthetic hover:border-primary-400 hover:bg-secondary-950";
   }
-  return "text-primary";
+  return "bg-primary relative border-transparent hover:border-secondary-400 hover:bg-primary-950";
 };
+
+const base =
+  "rounded-lg outline-none relative overflow-hidden px-6 py-3 border";
+const animation = `duration-300 ease-linear`;
 ---
 
 <button
-  class={`px-6 py-3 rounded-lg outline-none relative overflow-hidden border duration-300 ease-linear
-                    after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-[#172554]
-                    ${getThemeStyle(variant)} hover:after:opacity-100 hover:after:scale-[2.5] ${className}`}
+  class={`
+   ${base} 
+    ${animation}
+    ${getThemeStyle(variant)}
+    hover:after:opacity-100 hover:after:scale-[2.5] 
+    ${className}
+  `}
 >
   <slot />
 </button>

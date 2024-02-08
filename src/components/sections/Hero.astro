@@ -1,19 +1,23 @@
 ---
 import Container from "../shared/Container.astro";
 import { Image } from "astro:assets";
-import heroImg from "../../assets/solar.jpg";
+import heroImg from "../../assets/solar2.jpg";
 // import heroImg from "../../assets/solar-flip.jpg";
 import Paragraph from "../shared/Paragraph.astro";
 import CtaButton from "../shared/CtaButton.astro";
 import Title from "../shared/Title.astro";
 import SubTitle2 from "../shared/SubTitle2.astro";
 import SubTitle from "../shared/SubTitle.astro";
+import GradiantText from "../shared/GradiantText.astro";
 
 const heroSection = {
-  headline1: "Powering Tomorrow,",
-  headline2: "Sustainably Today!",
-  subheading:
-    "Join us in the green energy revolution and be a part of a sustainable future for generations to come.",
+  headline1: "Powering",
+  headline2: "Tomorrow,",
+  headline3: "Sustainably",
+  headline4: "Today!",
+  subheading1: "Join us in the green energy revolution",
+  subheading2: "and be part of a sustainable future",
+  subheading3: "for generations to come.",
   buttonText: "Get Started",
   backgroundImage: "hero-background-image.jpg",
 };
@@ -33,28 +37,7 @@ const { className = "" } = Astro.props;
     height="2359"
     class="w-full h-[80vh] object-cover"
   />
-  <div class="absolute inset-0 bg-black opacity-50"></div>
-
-  <!-- <div
-    class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] dark:bg-black/65 backdrop-blur-sm"
-  > -->
-  <!-- <div class="absolute top-0 start-0 w-full h-[80vh] pt-[100px]">
-    <Container className="grid grid-cols-2 h-full dark:text-white">
-      <div class="grid grid-cols-subgrid gap-4 col-span-2 place-items-end">
-      <div class="col-span-2 lg:col-span-1 place-items-start text-right">
-        <Title className="text-white">
-          {heroSection.headline1}
-          <br />
-          {heroSection.headline2}
-        </Title>
-        <SubTitle className="text-white">
-          {heroSection.subheading}
-        </SubTitle>
-        <CtaButton />
-      </div>
-      </div>
-    </Container>
-  </div> -->
+  <div class="absolute inset-0 bg-black opacity-60"></div>
   <div
     class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] flex flex-col justify-center"
   >
@@ -63,13 +46,19 @@ const { className = "" } = Astro.props;
         className="text-white bg-black/20 shadow-[0px_0px_80px_80px_rgba(0,0,0,0.2)] rounded-2xl"
       >
         {heroSection.headline1}
-        <!-- <br /> -->
-        {heroSection.headline2}
+        <GradiantText
+          >{" " + heroSection.headline2}
+          <br />
+          {" " + heroSection.headline3}
+        </GradiantText>{heroSection.headline4}
       </Title>
       <SubTitle
-        className="text-white bg-black/20 shadow-[0px_0px_40px_40px_rgba(0,0,0,0.2)] rounded-2xl pt-10"
+        className="text-white bg-black/20 shadow-[0px_0px_60px_60px_rgba(0,0,0,0.2)] rounded-2xl mt-10 leading-9 italic"
       >
-        {heroSection.subheading}
+        {heroSection.subheading1}
+        <br />
+        {heroSection.subheading2}<br />
+        {heroSection.subheading3}
       </SubTitle>
       <div class="pt-10">
         <CtaButton />
