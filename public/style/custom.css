@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --color-bg: 255 255 255;
   --color-border: 255 255 255;
   --color-box: 255 255 255;
@@ -18,14 +18,25 @@
   --heading-1: 255 255 255;
   --heading-2: 243 244 246;
   --heading-3: 209 213 219;
-}
+} */
 
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* @layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: "Raleway" sans-serif;
+  }
+} */
 html {
   scroll-behavior: smooth;
 }
-body {
+
+/* body {
   font-family: "Raleway", sans-serif;
-}
+} */
 
 [data-toggle-nav][data-open-nav="true"] #line1 {
   transform: translateY(0.375rem) rotate(40deg);

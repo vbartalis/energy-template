@@ -1,0 +1,26 @@
+---
+import Paragraph from "../../../shared/Paragraph.astro";
+import Title2 from "../../../shared/Title2.astro";
+
+export interface Props {
+  className?: string;
+  title: string;
+  subheading: { text1: string; text2: string };
+}
+
+const { title, subheading, className = "" } = Astro.props;
+---
+
+<div class=`${className}  rounded-xl `>
+  <Title2 className="m-5 text-accent-dark">{title}</Title2>
+  <div class="flex flex-col justify-start m-5 font-sans">
+    <Paragraph className="text-lg md:text-xl font-semibold text-accent-dark ">
+      {subheading.text1}
+    </Paragraph>
+  </div>
+  <div class="flex flex-col justify-start m-5">
+    <Paragraph className="text-lg md:text-xl  font-normal text-accent-dark ">
+      {subheading.text2}
+    </Paragraph>
+  </div>
+</div>

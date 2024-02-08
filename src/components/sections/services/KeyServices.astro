@@ -1,0 +1,75 @@
+---
+import Container from "../../shared/Container.astro";
+import ServiceCard from "./components/ServiceCard.astro";
+import Paragraph from "../../shared/Paragraph.astro";
+import Title2 from "../../shared/Title2.astro";
+
+import { servicesSectionData } from "./services.data";
+import ServiceCopyTextCard from "./components/ServiceCopyTextCard.astro";
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section
+  id="services"
+  class=` pt-10 relative dark:bg-gradient-to-br dark:from-indigo-800 dark:to-green-950  ${className}`
+>
+  <Container size="wide">
+    <div class="grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 gap-y-2 gap-x-4">
+      <!-- <div class="md:col-span-2 flex flex-col"> -->
+      <ServiceCopyTextCard
+        className="md:col-span-2 flex flex-col"
+        title={servicesSectionData.title}
+        subheading={servicesSectionData.subheading}
+      />
+      <!-- </div> -->
+      <div class="">
+        <ServiceCard
+          title={servicesSectionData.services[0].title}
+          description={servicesSectionData.services[0].briefDescription}
+          visual={servicesSectionData.services[0].visual}
+        />
+      </div>
+      <div class="">
+        <ServiceCard
+          title={servicesSectionData.services[1].title}
+          description={servicesSectionData.services[1].briefDescription}
+          visual={servicesSectionData.services[1].visual}
+        />
+      </div>
+      <div class="">
+        <ServiceCard
+          title={servicesSectionData.services[2].title}
+          description={servicesSectionData.services[2].briefDescription}
+          visual={servicesSectionData.services[2].visual}
+        />
+      </div>
+      <!-- <div class="col-span-2 place-items-start"></div> -->
+      <div class="">
+        <ServiceCard
+          title={servicesSectionData.services[3].title}
+          description={servicesSectionData.services[3].briefDescription}
+          visual={servicesSectionData.services[3].visual}
+        />
+      </div>
+      <div class="">
+        <ServiceCard
+          title={servicesSectionData.services[4].title}
+          description={servicesSectionData.services[4].briefDescription}
+          visual={servicesSectionData.services[4].visual}
+        />
+      </div>
+      <div class="">
+        <ServiceCard
+          title={servicesSectionData.services[5].title}
+          description={servicesSectionData.services[5].briefDescription}
+          visual={servicesSectionData.services[5].visual}
+        />
+      </div>
+    </div>
+  </Container>
+</section>

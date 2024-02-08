@@ -4,13 +4,13 @@ import EnvironmentalImpact from "../components/sections/EnvironmentalImpact.astr
 import FeaturedProjects from "../components/sections/FeaturedProjects.astro";
 import GetInvolved from "../components/sections/GetInvolved.astro";
 import Hero from "../components/sections/Hero.astro";
-import KeyServices from "../components/sections/KeyServices.astro";
+import KeyServices from "../components/sections/services/KeyServices.astro";
 import LatestInnovations from "../components/sections/LatestInnovations.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to the Agency template ">
-  <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+  <main class="flex flex-col gap-y-20 md:gap-y-30 overflow-hidden">
     <!-- Hero Section: -->
     <!-- High-quality image or animation of renewable energy sources. -->
     <!-- Headline and subheading centered on the page. -->
@@ -40,6 +40,12 @@ import Layout from "../layouts/Layout.astro";
     <!-- Use engaging visuals and concise text to highlight the benefits. -->
     <!-- Include a call-to-action button leading to detailed service information. -->
 
+    <LatestInnovations />
+    <!-- Latest Innovations: -->
+    <!-- Highlight any recent advancements or innovations in your green energy solutions. -->
+    <!-- Use images and concise descriptions to showcase your commitment to cutting-edge technology. -->
+    <!-- Emphasize how staying with your company means staying at the forefront of green energy. -->
+
     <EnvironmentalImpact />
     <!-- Environmental Impact: -->
     <!-- Showcase the positive impact users can make by choosing your services. -->
@@ -51,12 +57,6 @@ import Layout from "../layouts/Layout.astro";
     <!-- Share testimonials from satisfied customers. -->
     <!-- Include photos, names, and brief quotes to build trust. -->
     <!-- Place a call-to-action to encourage users to explore more customer stories. -->
-
-    <LatestInnovations />
-    <!-- Latest Innovations: -->
-    <!-- Highlight any recent advancements or innovations in your green energy solutions. -->
-    <!-- Use images and concise descriptions to showcase your commitment to cutting-edge technology. -->
-    <!-- Emphasize how staying with your company means staying at the forefront of green energy. -->
 
     <FeaturedProjects />
     <!-- Featured Projects or Case Studies: -->
