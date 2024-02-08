@@ -1,4 +1,6 @@
 ---
+import Button from "./Button.astro";
+
 export interface Props {
   href: string;
   text: string;
@@ -34,10 +36,16 @@ const animation = "duration-300 ease-linear";
     ${animation}
     ${getTextColor(variant)}
     ${getThemeStyle(variant)}
-    hover:after:opacity-100 hover:after:scale-[2.5] 
     ${className}`}
 >
   <span class={`relative  z-10`}>
     {text}
   </span>
 </a>
+<!-- <Button
+  color={"primary"}
+  variant={"outline"}
+  className={"min-w-max hover:bg-primary-950/40"}
+>
+  <span class="relative z-10"> {text} </span>
+</Button> -->
