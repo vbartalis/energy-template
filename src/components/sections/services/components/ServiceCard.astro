@@ -11,31 +11,48 @@ export interface Props {
 }
 
 const { title, description, visual } = Astro.props;
+const animation = `duration-300 ease-linear`;
 ---
 
-<div
-  class="relative overflow-hidden rounded-lg h-full
-  bg-gradient-to-tr from-slate-100/70 to-zinc-200/60 dark:from-slate-800/10 dark:to-zinc-800/10 backdrop-blur-md hover:bg-black/10 hover:dark:bg-slate-700/10"
->
+<div class=`
+  ${animation} group
+  relative overflow-hidden rounded-lg h-full
+  `>
   <Image
     src={visual}
     alt="Hero"
     width="2350"
     height="2359"
-    class="w-full h-96 object-cover"
+    class=`
+    w-full h-96 object-cover
+    ${animation} group-hover:scale-125
+    `
   />
-
   <div
-    class="absolute grid grid-cols-1 content-between top-0 start-0 w-full h-full bg-black/60"
+    class=`
+  absolute top-0 h-full w-full bg-gradi
+  bg-gradient-to-b from-black/20 to-black/60 
+  ${animation} group-hover:bg-black/60
+  `
   >
-    <!-- <h2 class="m-6 text-lg md:text-xl font-semibold text-white">
-      {title}
-    </h2> -->
-    <Title3 className="m-6 text-white">
-      {title}
-    </Title3>
-    <div class="self-baseline m-6">
-      <div class="text-sm text-white">
+  </div>
+  <div
+    class=`
+    absolute flex flex-col bottom-0 w-full 
+    translate-y-[calc(100%-7.5rem)] group-hover:translate-y-0
+    content-center
+    ${animation}
+    `
+  >
+    <div class=`m-6 text-white ${animation}`>
+      <Title3 className="mb-0">
+        {title}
+      </Title3>
+    </div>
+    <div
+      class=`self-baseline m-6 opacity-0 group-hover:opacity-100 ${animation}`
+    >
+      <div class="text-md text-white">
         {description}
       </div>
     </div>

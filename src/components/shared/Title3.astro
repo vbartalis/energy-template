@@ -3,7 +3,7 @@ export interface Props {
   className?: string;
 }
 
-const { className } = Astro.props;
+const { className = "" } = Astro.props;
 ---
 
 <h1 class=`text-2xl font-bold leading-tight mb-4 ${className}`>
