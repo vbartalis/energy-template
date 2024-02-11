@@ -31,7 +31,7 @@ const { className = "" } = Astro.props;
     class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] flex flex-col md:flex-row justify-end"
   >
     <div class="place-items-center flex flex-col text-center">
-      <Title className="text-accent dark:text-accent-light">
+      <Title className="">
         {heroSection.headline1}
         <GradiantText
           >{" " + heroSection.headline2}
@@ -39,9 +39,7 @@ const { className = "" } = Astro.props;
           {" " + heroSection.headline3}
         </GradiantText>{heroSection.headline4}
       </Title>
-      <SubTitle
-        className="text-accent dark:text-accent-light mt-10 leading-9 italic"
-      >
+      <SubTitle className=" mt-10 leading-9 italic">
         {heroSection.subheading1}
         <br />
         {heroSection.subheading2}<br />

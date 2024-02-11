@@ -16,18 +16,21 @@ const projectsSection = {
       title: "Solar-Powered Community",
       description:
         "Empowering a community with sustainable solar energy solutions. Learn how [Company Name] brought clean and affordable electricity to homes, schools, and businesses.",
+      location: "Los Angeles, California, USA",
       visual: img,
     },
     {
       title: "Wind Farm Innovation",
       description:
         "Revolutionizing wind energy with our innovative wind farm. Discover how [Company Name] is harnessing the power of the wind to create a greener and more sustainable future.",
+      location: "Scottish Highlands, United Kingdom",
       visual: img,
     },
     {
       title: "Hydropower Plant Success",
       description:
         "A journey into our hydropower success story. Explore how [Company Name] transforms the energy of flowing water into a reliable and eco-friendly power source.",
+      location: "Amazon Rainforest, South America",
       visual: img,
     },
   ],
@@ -39,6 +42,7 @@ const projectsSection = {
 type ProjectsProps = {
   title: string;
   description: string;
+  location: string;
   visual: ImageMetadata;
 };
 
@@ -48,24 +52,22 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section
-  id="projects"
-  class=`relative dark:bg-gradient-to-br dark:from-indigo-800 dark:to-green-950  ${className}`
->
-  <Container className="space-y-10 md:sapce-y-12">
+<section id="projects" class=`relative pt-10 ${className}`>
+  <Container className="">
     <div class="text-center max-w-3xl mx-auto space-y-4">
-      <Title2 className="">{projectsSection.title}</Title2>
-      <SubTitle2 className="mt-3 text-lg md:text-xl">
+      <Title2>{projectsSection.title}</Title2>
+      <SubTitle2>
         {projectsSection.subheading}
       </SubTitle2>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
         projectsSection.projects.map((project: ProjectsProps) => {
           return (
             <FeaturedProject
               title={project.title}
               description={project.description}
+              location={project.location}
               visual={project.visual}
             />
           );

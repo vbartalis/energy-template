@@ -14,10 +14,7 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section
-  id="services"
-  class=` pt-10 relative dark:bg-gradient-to-br dark:from-indigo-800 dark:to-green-950  ${className}`
->
+<section id="services" class=`pt-10 relative  ${className}`>
   <Container size="wide">
     <div class="grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 gap-y-2 gap-x-4">
       <!-- <div class="md:col-span-2 flex flex-col"> -->

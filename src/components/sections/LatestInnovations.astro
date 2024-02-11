@@ -53,11 +53,11 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section id="innovations" class=`pt-10 flex flex-col bg-orange-100 ${className}`>
-  <Container>
-    <div class="flex flex-col items-center justify-center text-center">
-      <Title2 className='text-accent-dark'>{innovationsSection.title}</Title2>
-      <SubTitle2 className="mt-3  ">
+<section id="innovations" class=`pt-10 flex flex-col  ${className}`>
+  <Container className='pb-10'>
+    <div class=" mx-auto flex flex-col items-center justify-center text-center">
+      <Title2 >{innovationsSection.title}</Title2>
+      <SubTitle2 >
         {innovationsSection.subheading}
       </SubTitle2>
     </div>
@@ -73,7 +73,7 @@ const { className } = Astro.props;
         const bgColor = ""
           
         return (
-          <div class={`w-100 ${bgColor} py-20`}>
+          <div class={`w-100 ${bgColor}  pb-32`}>
             <div
               class={`flex flex-col gap-10 lg:gap-12 ${flexRow} mx-auto max-w-7xl w-full`}
             >
@@ -104,7 +104,7 @@ const { className } = Astro.props;
                     alt="banner image"
                     width="1240"
                     height="1385"
-                    class="rounded-3xl object-cover h-full bg-gradient-to-r from-transparent via-transparent/50 to-transparent"
+                    class="rounded-3xl object-cover h-full "
                   />
                 </div>
               </div>
