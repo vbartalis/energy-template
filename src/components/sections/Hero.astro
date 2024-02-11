@@ -1,14 +1,10 @@
 ---
-import Container from "../shared/Container.astro";
 import { Image } from "astro:assets";
-import heroImg from "../../assets/solar2.jpg";
-// import heroImg from "../../assets/solar-flip.jpg";
-import Paragraph from "../shared/Paragraph.astro";
+import heroImg from "../../assets/wind3.jpg";
 import CtaButton from "../shared/CtaButton.astro";
-import Title from "../shared/Title.astro";
-import SubTitle2 from "../shared/SubTitle2.astro";
-import SubTitle from "../shared/SubTitle.astro";
 import GradiantText from "../shared/GradiantText.astro";
+import SubTitle from "../shared/SubTitle.astro";
+import Title from "../shared/Title.astro";
 
 const heroSection = {
   headline1: "Powering",
@@ -29,16 +25,48 @@ export interface Props {
 const { className = "" } = Astro.props;
 ---
 
-<section class=`relative  ${className}` id="hero">
-  <Image
-    src={heroImg}
-    alt="Hero"
-    width="2350"
-    height="2359"
-    class="w-full h-[80vh] object-cover"
-  />
-  <div class="absolute inset-0 bg-black opacity-60"></div>
+<section class=`relative  ${className} w-full h-[80vh]` id="hero">
+  <div class="absolute inset-0"></div>
   <div
+    class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] flex flex-col md:flex-row justify-end"
+  >
+    <div class="place-items-center flex flex-col text-center">
+      <Title className="text-accent ">
+        {heroSection.headline1}
+        <GradiantText
+          >{" " + heroSection.headline2}
+          <br />
+          {" " + heroSection.headline3}
+        </GradiantText>{heroSection.headline4}
+      </Title>
+      <SubTitle className="text-accent mt-10 leading-9 italic">
+        {heroSection.subheading1}
+        <br />
+        {heroSection.subheading2}<br />
+        {heroSection.subheading3}
+      </SubTitle>
+      <div class="pt-10">
+        <CtaButton />
+      </div>
+    </div>
+    <div class="flex relative">
+      <Image
+        src={heroImg}
+        alt="Hero"
+        width="2350"
+        height="2359"
+        class="w-full h-full object-cover absolute top-0 start-0"
+      />
+      <svg
+        class="fill-white z-10"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 500 400"
+      >
+        <path d="M0 0l0 400L100 0Z"> </path>
+      </svg>
+    </div>
+
+    <!-- <div
     class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] flex flex-col justify-center"
   >
     <div class="place-items-center flex flex-col text-center">
@@ -64,5 +92,6 @@ const { className = "" } = Astro.props;
         <CtaButton />
       </div>
     </div>
+  </div> -->
   </div>
 </section>

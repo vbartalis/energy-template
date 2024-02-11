@@ -35,7 +35,6 @@ export default {
           950: "#0e315d",
         },
         accent: {
-          DEFAULT: "#ffffff",
           light: "#ffffff",
           50: "#ffffff",
           100: "#c7c7c7",
@@ -49,6 +48,7 @@ export default {
           900: "#141414",
           950: "#000000",
           dark: "#000000",
+          DEFAULT: "#000000",
         },
         cta: {
           50: "#ffffe7",
