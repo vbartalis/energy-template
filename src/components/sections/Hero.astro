@@ -31,7 +31,7 @@ const { className = "" } = Astro.props;
     class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] flex flex-col md:flex-row justify-end"
   >
     <div class="place-items-center flex flex-col text-center">
-      <Title className="text-accent ">
+      <Title className="text-accent dark:text-accent-light">
         {heroSection.headline1}
         <GradiantText
           >{" " + heroSection.headline2}
@@ -39,7 +39,9 @@ const { className = "" } = Astro.props;
           {" " + heroSection.headline3}
         </GradiantText>{heroSection.headline4}
       </Title>
-      <SubTitle className="text-accent mt-10 leading-9 italic">
+      <SubTitle
+        className="text-accent dark:text-accent-light mt-10 leading-9 italic"
+      >
         {heroSection.subheading1}
         <br />
         {heroSection.subheading2}<br />
@@ -58,40 +60,12 @@ const { className = "" } = Astro.props;
         class="w-full h-full object-cover absolute top-0 start-0"
       />
       <svg
-        class="fill-white z-10"
+        class="fill-base dark:fill-base-dark z-10"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 500 400"
       >
         <path d="M0 0l0 400L100 0Z"> </path>
       </svg>
     </div>
-
-    <!-- <div
-    class="absolute top-0 start-0 w-full h-[80vh] pt-[100px] flex flex-col justify-center"
-  >
-    <div class="place-items-center flex flex-col text-center">
-      <Title
-        className="text-white bg-black/20 shadow-[0px_0px_80px_80px_rgba(0,0,0,0.2)] rounded-2xl"
-      >
-        {heroSection.headline1}
-        <GradiantText
-          >{" " + heroSection.headline2}
-          <br />
-          {" " + heroSection.headline3}
-        </GradiantText>{heroSection.headline4}
-      </Title>
-      <SubTitle
-        className="text-white bg-black/20 shadow-[0px_0px_60px_60px_rgba(0,0,0,0.2)] rounded-2xl mt-10 leading-9 italic"
-      >
-        {heroSection.subheading1}
-        <br />
-        {heroSection.subheading2}<br />
-        {heroSection.subheading3}
-      </SubTitle>
-      <div class="pt-10">
-        <CtaButton />
-      </div>
-    </div>
-  </div> -->
   </div>
 </section>

@@ -1,23 +1,35 @@
 ---
 export interface Props {
   className?: string;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "cta";
 }
 
 const { className, variant } = Astro.props;
 
-const getThemeStyle = (variant: "primary" | "secondary") => {
+const getThemeStyle = (variant: "primary" | "secondary" | "cta") => {
   if (variant === "primary") {
-    return "bg-transparent border-secondary-200 hover:border-primary-400 hover:bg-secondary-950/40";
+    return "bg-transparent border-primary hover:border-primary-800 hover:bg-primary-100 dark:hover:bg-primary-900";
   }
-  return "bg-transparent border-primary-400 hover:border-secondary-200 hover:bg-primary-950/40";
+  if (variant === "secondary") {
+    return "bg-transparent border-secondary hover:border-secondary-800";
+  }
+  if (variant === "cta") {
+    return "bg-transparent border-cta hover:border-cta-800";
+  }
+  return "";
 };
 
-const getTextColor = (variant: "primary" | "secondary") => {
+const getTextColor = (variant: "primary" | "secondary" | "cta") => {
   if (variant === "primary") {
-    return "text-secondary-200 hover:text-primary-400";
+    return "text-accent dark:text-accent-light";
   }
-  return "text-primary-400 hover:text-secondary-200";
+  if (variant === "secondary") {
+    return "text-secondary dark:text-secondary-light";
+  }
+  if (variant === "cta") {
+    return "text-cta dark:text-cta-light";
+  }
+  return "";
 };
 
 const base =

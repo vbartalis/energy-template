@@ -5,23 +5,35 @@ export interface Props {
   href: string;
   text: string;
   className?: string;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "cta";
 }
 
 const { href, text, className, variant } = Astro.props;
 
-const getThemeStyle = (variant: "primary" | "secondary") => {
+const getThemeStyle = (variant: "primary" | "secondary" | "cta") => {
   if (variant === "primary") {
-    return "bg-transparent relative border-secondary-200 hover:border-primary-400 hover:bg-secondary-950/40 ";
+    return "bg-primary relative border-primary hover:border-primary-800";
   }
-  return "bg-transparent relative border-primary-400 hover:border-secondary-200 hover:bg-primary-950/40";
+  if (variant === "secondary") {
+    return "bg-secondary relative border-secondary hover:border-secondary-800";
+  }
+  if (variant === "cta") {
+    return "bg-cta relative border-cta hover:border-cta-800";
+  }
+  return "";
 };
 
-const getTextColor = (variant: "primary" | "secondary") => {
+const getTextColor = (variant: "primary" | "secondary" | "cta") => {
   if (variant === "primary") {
-    return "text-accent hover:text-primary-400";
+    return "text-accent font-medium";
   }
-  return "text-primary-400 hover:text-secondary-200";
+  if (variant === "secondary") {
+    return "text-accent font-medium";
+  }
+  if (variant === "cta") {
+    return "text-accent font-medium";
+  }
+  return "";
 };
 
 const base =
@@ -38,7 +50,7 @@ const animation = "duration-300 ease-linear";
     ${getThemeStyle(variant)}
     ${className}`}
 >
-  <span class={`relative  z-10`}>
+  <span class={`relative z-10`}>
     {text}
   </span>
 </a>
