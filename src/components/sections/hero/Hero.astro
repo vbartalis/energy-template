@@ -1,10 +1,11 @@
 ---
-import { Image } from "astro:assets";
-import heroImg from "../../assets/wind3.jpg";
-import CtaButton from "../shared/CtaButton.astro";
-import GradiantText from "../shared/GradiantText.astro";
-import SubTitle from "../shared/SubTitle.astro";
-import Title from "../shared/Title.astro";
+import { Image, Picture } from "astro:assets";
+import heroImg from "../../../assets/wind3.jpg";
+import CtaButton from "../../shared/CtaButton.astro";
+import GradiantText from "../../shared/GradiantText.astro";
+import SubTitle from "../../shared/SubTitle.astro";
+import Title from "../../shared/Title.astro";
+import LazyImage from "../../shared/LazyImage";
 
 const heroSection = {
   headline1: "Powering",
@@ -50,7 +51,8 @@ const { className = "" } = Astro.props;
         </div>
       </div>
       <div class="flex relative pt-10 md:p-0">
-        <Image
+        <!-- <LazyImage src="/images/my_image.jpg" alt="A description of my image" /> -->
+        <Picture
           src={heroImg}
           alt="Hero"
           width="2350"
