@@ -1,0 +1,62 @@
+---
+import Paragraph from "../../../shared/Paragraph.astro";
+import { Image } from "astro:assets";
+import Title2 from "../../../shared/Title2.astro";
+import Button from "../../../shared/Button.astro";
+import Title3 from "../../../shared/Title3.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  location: string;
+  visual: ImageMetadata;
+}
+
+const { title, description, location, visual } = Astro.props;
+---
+
+<div
+  class="group overflow-hidden rounded-lg h-full flex flex-col dark:bg-base-dark-800 shadow-lg dark:shadow-dark ring-1 ring-black/5 pt-2"
+>
+  <div class="relative h-96">
+    <div class="overflow-hidden">
+      <Image
+        src={visual}
+        alt="Hero"
+        width="2350"
+        height="2359"
+        class="w-full h-96 object-cover group-hover:scale-105 duration-300 ease-in-out"
+      />
+    </div>
+    <svg
+      class="absolute top-[-1px] start-0 fill-base dark:fill-base-dark-800"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 400 75"
+    >
+      <path d="M0 0l400 0L400 75 0 25Z"></path>
+    </svg>
+    <p class="absolute top-0 end-0 m-3 start-end text-sm opacity-50">
+      {location}
+    </p>
+    <svg
+      class="absolute bottom-[-1px] start-0 fill-base dark:fill-base-dark-800"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -50 400 50"
+    >
+      <path d="M0 0l400 0L0-50Z"></path>
+    </svg>
+  </div>
+  <div class="grid grid-cols-1 content-between w-full h-full p-6">
+    <Title3 className="dark:opacity-70">
+      {title}
+    </Title3>
+    <div class="self-baseline">
+      <div class="text-sm opacity-60">
+        {description}
+      </div>
+    </div>
+    <div class="self-end mt-4">
+      <Button variant="outline" color="primary"> Read more</Button>
+    </div>
+  </div>
+</div>

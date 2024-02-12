@@ -98,6 +98,7 @@ export default {
       },
       boxShadow: {
         aesthetic: "0 3px 10px rgb(0,0,0,0.2)",
+        dark: "inset 0 1px 0 0 #ffffff0d",
       },
     },
   },
