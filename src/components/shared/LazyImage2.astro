@@ -1,0 +1,45 @@
+---
+import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
+import {
+  getImage,
+  type LocalImageProps,
+  type RemoteImageProps,
+} from "astro:assets";
+
+type Props = (LocalImageProps | RemoteImageProps) & { className?: string };
+
+const { src, alt, className = "", ...attrs } = Astro.props;
+
+const placeholderBackground = await getImage({
+  src: src,
+  format: "webp",
+  width: 16,
+  height: 16,
+  quality: 50,
+  blur: 50,
+  fo: "fill",
+});
+let isLoaded = false;
+
+const handleLoad = () => {
+  isLoaded = true;
+};
+---
+
+<Picture
+  src={src as ImageMetadata}
+  alt={alt}
+  formats={["avif", "webp"]}
+  class={className}
+  decoding="async"
+  loading="lazy"
+  onLoad={handleLoad}
+  style={{
+    backgroundImage: isLoaded ? "none" : `url(${placeholderBackground.src})`,
+    backgroundSize: isLoaded ? "cover" : "100%",
+    // filter: isLoaded ? "none" : "blur(10px)",
+    // backdropFilter: isLoaded ? "none" : "blur(10px)",
+  }}
+  {...attrs as any}
+/>
