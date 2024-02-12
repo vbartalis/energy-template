@@ -13,7 +13,7 @@ const getVariantStyle = (
 ) => {
   let classList = "";
   if (variant === "solid") {
-    classList = `border-transparent shadow-aesthetic `;
+    classList = `border-transparent  `;
     if (color === "primary") {
       classList += `bg-primary-500 hover:bg-primary-600 active:bg-primary-700 disabled:bg-primary-200 `;
       classList += `text-accent disabled:text-primary-700 `;
@@ -24,7 +24,7 @@ const getVariantStyle = (
     return classList;
   }
   if (variant === "outline") {
-    classList = `shadow-aesthetic `;
+    classList = ` `;
     if (color === "primary") {
       classList += `border-primary-700 bg-transparent hover:bg-primary-50 active:bg-primary-100 `;
       classList += `text-primary-700 `;
@@ -35,7 +35,7 @@ const getVariantStyle = (
     return classList;
   }
   if (variant === "gradient") {
-    classList = `border-transparent shadow-aesthetic `;
+    classList = `border-transparent  `;
     if (color === "primary") {
       classList += `bg-gradient-to-br from-primary-400 to-primary-600 hover:from-primary-500 hover:to-primary-700 active:from-primary-600 active:to-primary-800 disabled:from-primary-100 disabled:to-primary-300 `;
       classList += `text-accent disabled:text-primary-700 `;

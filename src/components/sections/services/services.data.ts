@@ -1,10 +1,10 @@
 import img1 from "../../../assets/solar3.jpg";
 import img2 from "../../../assets/wind.jpg";
 // TODO
-import img3 from "../../../assets/solar.jpg";
-import img4 from "../../../assets/grid.jpg";
+import img3 from "../../../assets/hydro.jpg";
+import img4 from "../../../assets/storage.jpg";
 // TODO
-import img5 from "../../../assets/solar.jpg";
+import img5 from "../../../assets/smart-grid.jpg";
 import img6 from "../../../assets/green.jpg";
 
 export const servicesSectionData = {

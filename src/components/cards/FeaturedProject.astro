@@ -2,6 +2,7 @@
 import Paragraph from "../shared/Paragraph.astro";
 import { Image } from "astro:assets";
 import Title2 from "../shared/Title2.astro";
+import Button from "../shared/Button.astro";
 
 export interface Props {
   title: string;
@@ -14,7 +15,7 @@ const { title, description, location, visual } = Astro.props;
 ---
 
 <div
-  class="overflow-hidden rounded-lg h-full bg-base dark:bg-base-dark border border-base-300 dark:border-base-900/50"
+  class="overflow-hidden rounded-lg h-full flex flex-col bg-base dark:bg-base-dark border border-base-300 dark:border-base-900/50"
 >
   <div class="relative">
     <Image
@@ -42,7 +43,7 @@ const { title, description, location, visual } = Astro.props;
       <path d="M0 0l400 0L0-50Z"></path>
     </svg>
   </div>
-  <div class="grid grid-cols-1 content-between w-full">
+  <div class="grid grid-cols-1 content-between w-full h-full">
     <Title2 className="m-6">
       {title}
     </Title2>
@@ -50,6 +51,9 @@ const { title, description, location, visual } = Astro.props;
       <div class="text-sm">
         {description}
       </div>
+    </div>
+    <div class="m-6 self-end">
+      <Button variant="outline" color="primary"> Read more</Button>
     </div>
   </div>
 </div>
