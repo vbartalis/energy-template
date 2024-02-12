@@ -1,0 +1,37 @@
+---
+import Container from "../../shared/Container.astro";
+import SubTitle2 from "../../shared/SubTitle2.astro";
+import Title2 from "../../shared/Title2.astro";
+import Testimonial from "./components/Testimonial.astro";
+
+import img1 from "./assets/person1.jpg";
+import img2 from "./assets/person2.jpg";
+import img3 from "./assets/person3.jpg";
+
+import { testimonialsSection } from "./data.ts";
+---
+
+<section id="testimonials" class="pt-10">
+  <Container className="flex flex-col items-center">
+    <Title2>{testimonialsSection.title}</Title2>
+    <SubTitle2>
+      {testimonialsSection.subheading}
+    </SubTitle2>
+    <div
+      class="mt-8 flex flex-col gap-8 midmd:flex-row text-heading-3 font-medium"
+    >
+      {
+        testimonialsSection.testimonials.map((testimonial) => {
+          return (
+            <Testimonial
+              name={testimonial.name}
+              visual={testimonial.visual}
+              occupation={testimonial.occupation}
+              quote={testimonial.quote}
+            />
+          );
+        })
+      }
+    </div>
+  </Container>
+</section>

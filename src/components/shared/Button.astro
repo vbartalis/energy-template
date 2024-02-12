@@ -26,10 +26,10 @@ const getVariantStyle = (
   if (variant === "outline") {
     classList = ` `;
     if (color === "primary") {
-      classList += `border-primary-700 bg-transparent hover:bg-primary-50 active:bg-primary-100 `;
+      classList += `border-primary-700 bg-transparent hover:bg-primary-500/10 active:bg-primary-500/10 `;
       classList += `text-primary-700 `;
     } else if (color === "secondary") {
-      classList += `border-secondary-700 bg-transparent hover:bg-secondary-50 active:bg-secondary-100 `;
+      classList += `border-secondary-700 bg-transparent hover:bg-secondary-500/10 active:bg-secondary-500/10 `;
       classList += `text-secondary-700 `;
     }
     return classList;

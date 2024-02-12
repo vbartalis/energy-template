@@ -15,7 +15,7 @@ const { title, description, location, visual } = Astro.props;
 ---
 
 <div
-  class="overflow-hidden rounded-lg h-full flex flex-col bg-base dark:bg-base-dark border border-base-300 dark:border-base-900/50"
+  class="overflow-hidden rounded-lg h-full flex flex-col bg-base-100 dark:bg-base-dark-900 border border-base-300 dark:border-base-900/20 shadow-lg"
 >
   <div class="relative">
     <Image
@@ -26,7 +26,7 @@ const { title, description, location, visual } = Astro.props;
       class="w-full h-96 object-cover"
     />
     <svg
-      class="absolute top-[-1px] start-0 fill-base dark:fill-base-dark"
+      class="absolute top-[-1px] start-0 fill-base-200 dark:fill-base-dark-800"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 400 75"
     >
@@ -36,7 +36,7 @@ const { title, description, location, visual } = Astro.props;
       {location}
     </p>
     <svg
-      class="absolute bottom-[-1px] start-0 fill-base dark:fill-base-dark"
+      class="absolute bottom-[-1px] start-0 fill-base-100 dark:fill-base-dark-900"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -50 400 50"
     >
@@ -44,11 +44,11 @@ const { title, description, location, visual } = Astro.props;
     </svg>
   </div>
   <div class="grid grid-cols-1 content-between w-full h-full">
-    <Title2 className="m-6">
+    <Title2 className="m-6 dark:opacity-70">
       {title}
     </Title2>
     <div class="m-6 self-baseline">
-      <div class="text-sm">
+      <div class="text-sm opacity-60">
         {description}
       </div>
     </div>
