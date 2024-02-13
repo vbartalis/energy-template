@@ -1,10 +1,12 @@
 ---
+import Button from "../../shared/Button.astro";
 import Container from "../../shared/Container.astro";
 import Paragraph from "../../shared/Paragraph.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title from "../../shared/Title.astro";
 import Title2 from "../../shared/Title2.astro";
 import Title3 from "../../shared/Title3.astro";
+import EmailForm from "./components/EmailForm.astro";
 import InvolvementCard from "./components/InvolvementCard.astro";
 
 import { getInvolvedSection } from "./data.ts";
@@ -21,7 +23,7 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section id="cta" class=`relative pb-8 ${className}`>
+<section id="cta" class=`relative py-8 ${className}`>
   <Container className="space-y-10 md:sapce-y-12">
     <div class="text-center max-w-3xl mx-auto space-y-4">
       <Title2 className="">{getInvolvedSection.title}</Title2>
@@ -41,6 +43,10 @@ const { className } = Astro.props;
           );
         })
       }
+    </div>
+
+    <div class="flex justify-center">
+      <EmailForm />
     </div>
   </Container>
 </section>
