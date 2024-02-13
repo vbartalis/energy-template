@@ -5,11 +5,11 @@ export interface Props {
   variant: "solid" | "outline" | "gradient";
 }
 
-const { className = "", color, variant } = Astro.props;
+const { className = "", color = "primary", variant = "solid" } = Astro.props;
 
 const getVariantStyle = (
-  variant: "solid" | "outline" | "gradient",
-  color: "primary" | "secondary"
+  variant: "solid" | "outline" | "gradient" = "solid",
+  color: "primary" | "secondary" | "cta" = "primary"
 ) => {
   let classList = "";
   if (variant === "solid") {
