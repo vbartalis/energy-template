@@ -9,13 +9,50 @@ import {
 
 type Props = (LocalImageProps | RemoteImageProps) & { className?: string };
 
-const { src, alt, className = "", ...attrs } = Astro.props;
+const { src, alt, className = "", width, height, ...attrs } = Astro.props;
+
+let placeholderDimensions = { newWidth: 0, newHeight: 0 };
+if (!!width && !!height) {
+  placeholderDimensions = scaleDownDimensions(
+    Number(width),
+    Number(height),
+    30
+  );
+}
+
+function scaleDownDimensions(
+  originalWidth = 200,
+  originalHeight = 200,
+  maxDimension: number
+) {
+  // Calculate the aspect ratio
+  const aspectRatio = originalWidth / originalHeight;
+
+  // Determine the new dimensions
+  let newWidth, newHeight;
+
+  if (originalWidth > originalHeight) {
+    // Landscape orientation
+    newWidth = maxDimension;
+    newHeight = maxDimension / aspectRatio;
+  } else {
+    // Portrait or square orientation
+    newHeight = maxDimension;
+    newWidth = maxDimension * aspectRatio;
+  }
+
+  // Round the dimensions to integers
+  newWidth = Math.round(newWidth);
+  newHeight = Math.round(newHeight);
+
+  return { newWidth, newHeight };
+}
 
 const placeholderBackground = await getImage({
   src: src,
   format: "webp",
-  width: 16,
-  height: 16,
+  width: placeholderDimensions.newWidth,
+  height: placeholderDimensions.newHeight,
   quality: 50,
   blur: 50,
   fo: "fill",
