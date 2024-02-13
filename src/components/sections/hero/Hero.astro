@@ -5,8 +5,7 @@ import CtaButton from "../../shared/CtaButton.astro";
 import GradiantText from "../../shared/GradiantText.astro";
 import SubTitle from "../../shared/SubTitle.astro";
 import Title from "../../shared/Title.astro";
-import LazyImage from "../../shared/LazyImage";
-import LazyImage2 from "../../shared/LazyImage2.astro";
+import LazyImage from "../../shared/LazyImage.astro";
 
 const heroSection = {
   headline1: "Powering",
@@ -52,20 +51,13 @@ const { className = "" } = Astro.props;
         </div>
       </div>
       <div class="flex relative pt-10 md:p-0">
-        <LazyImage2
+        <LazyImage
           src={heroImg}
           width="2350"
           height="2359"
-          alt="A description of my image"
+          alt="A picture of a wind turbine."
           className="w-full h-full object-cover"
         />
-        <!-- <Picture
-          src={heroImg}
-          alt="Hero"
-          width="2350"
-          height="2359"
-          class="w-full h-full object-cover"
-        /> -->
         <svg
           class="fill-base-100 dark:fill-base-dark-900 z-10 absolute top-0 start-0 h-full hidden md:block"
           xmlns="http://www.w3.org/2000/svg"
