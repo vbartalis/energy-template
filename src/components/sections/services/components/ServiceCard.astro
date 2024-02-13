@@ -3,6 +3,7 @@ import Paragraph from "../../../shared/Paragraph.astro";
 import { Image } from "astro:assets";
 import Title2 from "../../../shared/Title2.astro";
 import Title3 from "../../../shared/Title3.astro";
+import LazyImage from "../../../shared/LazyImage.astro";
 
 export interface Props {
   title: string;
@@ -18,7 +19,15 @@ const animation = `duration-300 ease-linear`;
   ${animation} group
   relative overflow-hidden rounded-lg h-full
   `>
-  <Image
+  <LazyImage
+    src={visual}
+    alt="Hero"
+    class=`
+    w-full h-96 object-cover
+    ${animation} group-hover:scale-125
+    `
+  />
+  <!-- <Image
     src={visual}
     alt="Hero"
     width="2350"
@@ -27,7 +36,7 @@ const animation = `duration-300 ease-linear`;
     w-full h-96 object-cover
     ${animation} group-hover:scale-125
     `
-  />
+  /> -->
   <div
     class=`
   absolute top-0 h-full w-full bg-gradi

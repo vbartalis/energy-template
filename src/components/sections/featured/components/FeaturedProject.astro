@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import Title2 from "../../../shared/Title2.astro";
 import Button from "../../../shared/Button.astro";
 import Title3 from "../../../shared/Title3.astro";
+import LazyImage from "../../../shared/LazyImage.astro";
 
 export interface Props {
   title: string;
@@ -20,13 +21,18 @@ const { title, description, location, visual } = Astro.props;
 >
   <div class="relative h-96">
     <div class="overflow-hidden">
-      <Image
+      <LazyImage
+        src={visual}
+        alt="Hero"
+        class="w-full h-96 object-cover group-hover:scale-105 duration-300 ease-in-out"
+      />
+      <!-- <Image
         src={visual}
         alt="Hero"
         width="2350"
         height="2359"
         class="w-full h-96 object-cover group-hover:scale-105 duration-300 ease-in-out"
-      />
+      /> -->
     </div>
     <svg
       class="absolute top-[-1px] start-0 fill-base dark:fill-base-dark-800"

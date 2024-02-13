@@ -10,6 +10,7 @@ import imgWind from "../../../assets/wind.jpg"
 import Title2 from '../../shared/Title2.astro';
 import SubTitle2 from '../../shared/SubTitle2.astro';
 import Title3 from '../../shared/Title3.astro';
+import LazyImage from '../../shared/LazyImage.astro';
 
 
 type InnovationsProps = {
@@ -99,13 +100,21 @@ const { className } = Astro.props;
 
               <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
                 <div class="w-full max-h-[50vh] sm:h-96 midmd:h-full relative">
-                  <Image
+                  <LazyImage
                     src={solution.visual}
                     alt="banner image"
-                    width="1240"
-                    height="1385"
+                   
                     class="rounded-3xl object-cover h-full "
-                  />
+                  ></LazyImage>
+                  <!-- 
+                    <Image
+                     src={solution.visual}
+                     alt="banner image"
+                     width="1240"
+                     height="1385"
+                     class="rounded-3xl object-cover h-full "
+                   />
+                   -->
                 </div>
               </div>
             </div>

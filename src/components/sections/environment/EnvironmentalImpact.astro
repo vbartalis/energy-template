@@ -7,6 +7,7 @@ import Title from "../../shared/Title.astro";
 import Title2 from "../../shared/Title2.astro";
 import img from "../../../assets/green-hands.jpg";
 import { Image } from "astro:assets";
+import LazyImage from "../../shared/LazyImage.astro";
 
 const environmentalImpactSection = {
   title: "Environmental Impact",
@@ -20,7 +21,7 @@ const environmentalImpactSection = {
     "Mitigating Climate Change",
     "Promoting a Cleaner and Healthier Planet",
   ],
-  visual: "environmental-impact-image.jpg",
+  visual: img,
   callToAction: "Join Us in Building a Sustainable Future",
   button: "Learn More",
 };
@@ -58,13 +59,18 @@ const environmentalImpactSection = {
     <div
       class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-[587px]"
     >
-      <Image
+      <LazyImage
+        src={environmentalImpactSection.visual}
+        alt="environmental impact"
+        class="w-full h-full object-cover rounded-2xl"
+      />
+      <!--<Image
         src={img}
         alt="banner image"
         width="1920"
         height="2898"
         class="w-full h-full object-cover rounded-2xl"
-      />
+      /> -->
     </div>
   </Container>
 </section>

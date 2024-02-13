@@ -18,6 +18,12 @@ if (!!width && !!height) {
     Number(height),
     30
   );
+} else if (!width && !height) {
+  placeholderDimensions = scaleDownDimensions(200, 200, 30);
+} else if (!!width && !height) {
+  placeholderDimensions = scaleDownDimensions(Number(width), 200, 30);
+} else if (!width && !!height) {
+  placeholderDimensions = scaleDownDimensions(200, Number(height), 30);
 }
 
 function scaleDownDimensions(
