@@ -5,24 +5,7 @@ import LazyImage from "../../shared/LazyImage.astro";
 import Paragraph from "../../shared/Paragraph.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
-import img from "./assets/green-hands.jpg";
-
-const environmentalImpactSection = {
-  title: "Environmental Impact",
-  subheading: "Choosing [Company Name] for a Greener Tomorrow",
-  description:
-    "At [Company Name], we are committed to making a positive impact on the environment. By choosing our sustainable energy solutions, you contribute to:",
-  impactPoints: [
-    "Reducing Carbon Emissions",
-    "Conserving Natural Resources",
-    "Preserving Biodiversity",
-    "Mitigating Climate Change",
-    "Promoting a Cleaner and Healthier Planet",
-  ],
-  visual: img,
-  callToAction: "Join Us in Building a Sustainable Future",
-  button: "Learn More",
-};
+import { environmentalImpactSection } from "./data.ts";
 ---
 
 <section id="environment" class="pt-10">
