@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Title3 from "../../../shared/Title3.astro";
+import LazyImage from "../../../shared/LazyImage.astro";
 
 export interface Props {
   name: string;
@@ -17,9 +18,10 @@ const { name, visual, occupation, quote } = Astro.props;
 >
   <div class="flex flex-row items-center overflow-hidden p-4 gap-4">
     <div class="shrink-0 h-[58px] w-[58px] rounded-full overflow-hidden">
-      <Image
+      <LazyImage
         src={visual}
         alt="profile picture"
+        height={58}
         class="inline-block w-full h-full object-cover"
       />
     </div>

@@ -1,6 +1,6 @@
-import img1 from "../../../assets/solar-person.jpg";
-import img2 from "../../../assets/wind-person.jpg";
-import img3 from "../../../assets/amazonas2.jpg";
+import img1 from "./assets/solar-person.png";
+import img2 from "./assets/wind-person.png";
+import img3 from "./assets/amazonas2.png";
 
 export const projectsSection = {
   title: "Featured Projects",
@@ -28,7 +28,6 @@ export const projectsSection = {
       visual: img3,
     },
   ],
-  visual: "projects-section-image.jpg",
   callToAction: "Embark on a Green Energy Journey with [Company Name]",
   button: "View More Projects",
 };

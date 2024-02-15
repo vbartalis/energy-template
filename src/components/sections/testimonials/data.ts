@@ -1,6 +1,6 @@
-import img1 from "./assets/person1.jpg";
-import img2 from "./assets/person2.jpg";
-import img3 from "./assets/person3.jpg";
+import img1 from "./assets/person1.png";
+import img2 from "./assets/person2.png";
+import img3 from "./assets/person3.png";
 
 export const testimonialsSection = {
   title: "What Our Customers Say",

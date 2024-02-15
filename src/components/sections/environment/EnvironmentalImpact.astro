@@ -5,7 +5,7 @@ import Paragraph from "../../shared/Paragraph.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title from "../../shared/Title.astro";
 import Title2 from "../../shared/Title2.astro";
-import img from "../../../assets/green-hands.jpg";
+import img from "./assets/green-hands.jpg";
 import { Image } from "astro:assets";
 import LazyImage from "../../shared/LazyImage.astro";
 
@@ -52,7 +52,7 @@ const environmentalImpactSection = {
         }
       </ul>
       <div class="pt-10">
-        <CtaButton />
+        <CtaButton>{environmentalImpactSection.button}</CtaButton>
       </div>
     </div>
 
