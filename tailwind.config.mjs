@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
@@ -99,6 +101,9 @@ export default {
       boxShadow: {
         aesthetic: "0 3px 10px rgb(0,0,0,0.2)",
         dark: "inset 0 1px 0 0 #ffffff0d",
+      },
+      fontFamily: {
+        sans: ["Raleway", ...defaultTheme.fontFamily.sans],
       },
     },
   },
