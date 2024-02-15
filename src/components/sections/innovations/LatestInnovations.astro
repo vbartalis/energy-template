@@ -1,17 +1,15 @@
 ---
 import Container from '../../shared/Container.astro';
 import Paragraph from '../../shared/Paragraph.astro';
-import Title from '../../shared/Title.astro';
-import { Image } from "astro:assets";
 
-import imgGrid from "./assets/grid.jpg"
-import imgSolar from "./assets/solar2.jpg"
-import imgWind from "./assets/wind.jpg"
+import imgGrid from "./assets/grid.jpg";
+import imgSolar from "./assets/solar2.jpg";
+import imgWind from "./assets/wind.jpg";
 
-import Title2 from '../../shared/Title2.astro';
-import SubTitle2 from '../../shared/SubTitle2.astro';
-import Title3 from '../../shared/Title3.astro';
 import LazyImage from '../../shared/LazyImage.astro';
+import SubTitle2 from '../../shared/SubTitle2.astro';
+import Title2 from '../../shared/Title2.astro';
+import Title3 from '../../shared/Title3.astro';
 
 
 type InnovationsProps = {
@@ -56,9 +54,11 @@ const { className } = Astro.props;
 ---
 
 <section id="innovations" class=`pt-10 flex flex-col  ${className}`>
-  <Container className='pb-10'>
+  <Container>
+    <Title2>{innovationsSection.title}</Title2>
+  </Container>
+  <Container>
     <div class=" mx-auto flex flex-col items-center justify-center text-center">
-      <Title2 >{innovationsSection.title}</Title2>
       <SubTitle2 >
         {innovationsSection.subheading}
       </SubTitle2>

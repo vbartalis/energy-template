@@ -5,15 +5,13 @@ import Title2 from "../../../shared/Title2.astro";
 
 export interface Props {
   className?: string;
-  title: string;
   subheading: { text1: string; text2: string };
 }
 
-const { title, subheading, className = "" } = Astro.props;
+const { subheading, className = "" } = Astro.props;
 ---
 
 <div class=`${className}  rounded-xl m-5`>
-  <Title2>{title}</Title2>
   <div class="flex flex-col justify-start font-sans">
     <SubTitle2>
       {subheading.text1}

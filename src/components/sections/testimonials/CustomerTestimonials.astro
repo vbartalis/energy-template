@@ -4,16 +4,14 @@ import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
 import Testimonial from "./components/Testimonial.astro";
 
-import img1 from "./assets/person1.jpg";
-import img2 from "./assets/person2.jpg";
-import img3 from "./assets/person3.jpg";
-
 import { testimonialsSection } from "./data.ts";
 ---
 
 <section id="testimonials" class="pt-10">
-  <Container className="flex flex-col items-center">
+  <Container>
     <Title2>{testimonialsSection.title}</Title2>
+  </Container>
+  <Container className="flex flex-col items-center">
     <SubTitle2>
       {testimonialsSection.subheading}
     </SubTitle2>

@@ -1,11 +1,10 @@
 ---
 import Container from "../../shared/Container.astro";
-import ServiceCard from "./components/ServiceCard.astro";
-import Paragraph from "../../shared/Paragraph.astro";
 import Title2 from "../../shared/Title2.astro";
+import ServiceCard from "./components/ServiceCard.astro";
 
-import { servicesSectionData } from "./data";
 import ServiceCopyTextCard from "./components/ServiceCopyTextCard.astro";
+import { servicesSectionData } from "./data";
 
 export interface Props {
   className?: string;
@@ -16,14 +15,14 @@ const { className } = Astro.props;
 
 <section id="services" class=`pt-10 relative  ${className}`>
   <Container size="wide">
+    <Title2>{servicesSectionData.title}</Title2>
+  </Container>
+  <Container size="wide">
     <div class="grid grid-col-1 md:grid-cols-3 lg:grid-cols-4 gap-y-2 gap-x-4">
-      <!-- <div class="md:col-span-2 flex flex-col"> -->
       <ServiceCopyTextCard
         className="md:col-span-2 flex flex-col"
-        title={servicesSectionData.title}
         subheading={servicesSectionData.subheading}
       />
-      <!-- </div> -->
       <div class="">
         <ServiceCard
           title={servicesSectionData.services[0].title}
