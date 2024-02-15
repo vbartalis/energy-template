@@ -12,7 +12,7 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section id="services" class=`pt-10 relative  ${className}`>
+<section id="services" class=`${className}`>
   <Container size="wide">
     <Title2>{servicesSectionData.title}</Title2>
   </Container>
@@ -43,7 +43,6 @@ const { className } = Astro.props;
           visual={servicesSectionData.services[2].visual}
         />
       </div>
-      <!-- <div class="col-span-2 place-items-start"></div> -->
       <div class="">
         <ServiceCard
           title={servicesSectionData.services[3].title}

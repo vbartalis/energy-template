@@ -6,19 +6,13 @@ import EmailForm from "./components/EmailForm.astro";
 import InvolvementCard from "./components/InvolvementCard.astro";
 import { getInvolvedSection } from "./data.ts";
 
-type InitiativesProps = {
-  title: string;
-  description: string;
-  visual: string;
-};
-
 export interface Props {
   className?: string;
 }
 const { className } = Astro.props;
 ---
 
-<section id="cta" class=`relative py-8 ${className}`>
+<section id="cta" class=`${className}`>
   <Container>
     <Title2>{getInvolvedSection.title}</Title2>
   </Container>
@@ -30,7 +24,7 @@ const { className } = Astro.props;
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
-        getInvolvedSection.initiatives.map((initiative: InitiativesProps) => {
+        getInvolvedSection.initiatives.map((initiative) => {
           return (
             <InvolvementCard
               title={initiative.title}

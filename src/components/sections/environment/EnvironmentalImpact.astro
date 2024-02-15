@@ -6,9 +6,15 @@ import Paragraph from "../../shared/Paragraph.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
 import { environmentalImpactSection } from "./data.ts";
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
 ---
 
-<section id="environment" class="pt-10">
+<section id="environment" class=`${className}`>
   <Container>
     <Title2>{environmentalImpactSection.title}</Title2>
   </Container>

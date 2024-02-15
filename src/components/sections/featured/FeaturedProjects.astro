@@ -5,20 +5,13 @@ import Title2 from "../../shared/Title2.astro";
 import FeaturedProject from "./components/FeaturedProject.astro";
 import { projectsSection } from "./data.ts";
 
-type ProjectsProps = {
-  title: string;
-  description: string;
-  location: string;
-  visual: ImageMetadata;
-};
-
 export interface Props {
   className?: string;
 }
 const { className } = Astro.props;
 ---
 
-<section id="projects" class=`relative pt-10 ${className}`>
+<section id="projects" class=`${className}`>
   <Container>
     <Title2>{projectsSection.title}</Title2>
   </Container>
@@ -30,7 +23,7 @@ const { className } = Astro.props;
     </div>
     <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
-        projectsSection.projects.map((project: ProjectsProps) => {
+        projectsSection.projects.map((project) => {
           return (
             <FeaturedProject
               title={project.title}

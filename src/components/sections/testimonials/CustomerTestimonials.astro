@@ -4,9 +4,15 @@ import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
 import Testimonial from "./components/Testimonial.astro";
 import { testimonialsSection } from "./data.ts";
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
 ---
 
-<section id="testimonials" class="pt-10">
+<section id="testimonials" class=`${className}`>
   <Container>
     <Title2>{testimonialsSection.title}</Title2>
   </Container>
