@@ -1,5 +1,6 @@
 ---
 import Container from "../../shared/Container.astro";
+import GradiantText from "../../shared/GradiantText.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
 import EmailForm from "./components/EmailForm.astro";
@@ -13,15 +14,16 @@ const { className } = Astro.props;
 ---
 
 <section id="cta" class=`${className}`>
-  <Container>
+  <Container
+    className="mx-auto flex flex-col items-center justify-center text-center"
+  >
     <Title2>{getInvolvedSection.title}</Title2>
+    <SubTitle2>
+      <GradiantText>{getInvolvedSection.subheading1_1}</GradiantText>
+      {getInvolvedSection.subheading1_2}
+    </SubTitle2>
   </Container>
   <Container className="space-y-10 md:sapce-y-12">
-    <div class="text-center max-w-3xl mx-auto space-y-4">
-      <SubTitle2 className="mt-3">
-        {getInvolvedSection.subheading}
-      </SubTitle2>
-    </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
         getInvolvedSection.initiatives.map((initiative) => {

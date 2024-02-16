@@ -1,5 +1,6 @@
 ---
 import Container from "../../shared/Container.astro";
+import GradiantText from "../../shared/GradiantText.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
 import Testimonial from "./components/Testimonial.astro";
@@ -13,10 +14,13 @@ const { className } = Astro.props;
 ---
 
 <section id="testimonials" class=`${className}`>
-  <Container>
+  <Container
+    className="mx-auto flex flex-col items-center justify-center text-center"
+  >
     <Title2>{testimonialsSection.title}</Title2>
     <SubTitle2>
-      {testimonialsSection.subheading}
+      <GradiantText> {testimonialsSection.subheading1_1}</GradiantText><br />
+      {testimonialsSection.subheading1_2}
     </SubTitle2>
   </Container>
   <Container className="flex flex-col items-center">

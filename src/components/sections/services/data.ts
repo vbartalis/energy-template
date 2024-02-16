@@ -10,8 +10,8 @@ import img6 from "./assets/green.png";
 export const servicesSectionData = {
   title: "Our Sustainable Energy Solutions",
   subheading: {
-    text1:
-      "Experience a Revolution in Energy Solutions - Embrace Innovation, Embrace Sustainability.",
+    text1_1: "Experience a Revolution in Energy Solutions - ",
+    text1_2: "Embrace Innovation, Embrace Sustainability.",
     text2:
       "We're here to Empower Your Life and Spaces with Clean, Renewable Energy, Paving the Way for a Brighter and Greener Tomorrow.",
   },

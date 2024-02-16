@@ -1,5 +1,6 @@
 ---
 import Container from "../../shared/Container.astro";
+import GradiantText from "../../shared/GradiantText.astro";
 import LazyImage from "../../shared/LazyImage.astro";
 import Paragraph from "../../shared/Paragraph.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
@@ -15,10 +16,13 @@ const { className } = Astro.props;
 ---
 
 <section id="innovations" class=`${className}`>
-  <Container>
+  <Container
+    className="mx-auto flex flex-col items-center justify-center text-center"
+  >
     <Title2>{innovationsSection.title}</Title2>
     <SubTitle2>
-      {innovationsSection.subheading}
+      {innovationsSection.subheading1_1}<br />
+      <GradiantText>{innovationsSection.subheading1_2}</GradiantText>
     </SubTitle2>
   </Container>
   <Container>
@@ -32,20 +36,19 @@ const { className } = Astro.props;
             <div
               class={`flex flex-col gap-10 lg:gap-12 ${flexRow} mx-auto max-w-7xl w-full`}
             >
-              <div class="max-w-md mx-auto w-11/12 flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
-                <Title3>{solution.title}</Title3>
-                <Paragraph className="mt-3 ">{solution.description}</Paragraph>
-              </div>
-              <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
+              <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2  flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
                 <div class="w-full max-h-[50vh] sm:h-96 midmd:h-full relative">
                   <LazyImage
                     src={solution.visual}
                     alt="banner image"
-                    width="776"
-                    height="472"
+                    width="500"
                     class="rounded-3xl object-cover h-full "
                   />
                 </div>
+              </div>
+              <div class="max-w-md mx-auto w-11/12 flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
+                <Title3>{solution.title}</Title3>
+                <Paragraph className="mt-3 ">{solution.description}</Paragraph>
               </div>
             </div>
           </div>

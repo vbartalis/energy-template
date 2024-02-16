@@ -5,7 +5,8 @@ import svg4 from "./assets/green-4.svg?raw";
 
 export const getInvolvedSection = {
   title: "Get Involved",
-  subheading: "Join Us in Building a Sustainable Future",
+  subheading1_1: "Join Us ",
+  subheading1_2: "in Building a Sustainable Future",
   initiatives: [
     {
       title: "Community Outreach",

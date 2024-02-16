@@ -1,11 +1,12 @@
 ---
+import GradiantText from "../../../shared/GradiantText.astro";
 import Paragraph from "../../../shared/Paragraph.astro";
 import SubTitle2 from "../../../shared/SubTitle2.astro";
 import Title2 from "../../../shared/Title2.astro";
 
 export interface Props {
   className?: string;
-  subheading: { text1: string; text2: string };
+  subheading: { text1_1: string; text1_2: string; text2: string };
 }
 
 const { subheading, className = "" } = Astro.props;
@@ -14,7 +15,7 @@ const { subheading, className = "" } = Astro.props;
 <div class=`${className}  rounded-xl m-5`>
   <div class="flex flex-col justify-start font-sans">
     <SubTitle2>
-      {subheading.text1}
+      {subheading.text1_1}<GradiantText>{subheading.text1_2}</GradiantText>
     </SubTitle2>
   </div>
   <div class="flex flex-col justify-start">

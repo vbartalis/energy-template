@@ -1,5 +1,6 @@
 ---
 import Container from "../../shared/Container.astro";
+import GradiantText from "../../shared/GradiantText.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
 import Title2 from "../../shared/Title2.astro";
 import FeaturedProject from "./components/FeaturedProject.astro";
@@ -12,15 +13,16 @@ const { className } = Astro.props;
 ---
 
 <section id="projects" class=`${className}`>
-  <Container>
+  <Container
+    className="mx-auto flex flex-col items-center justify-center text-center"
+  >
     <Title2>{projectsSection.title}</Title2>
+    <SubTitle2>
+      {projectsSection.subheading1_1}
+      <GradiantText> {projectsSection.subheading1_2}</GradiantText>
+    </SubTitle2>
   </Container>
   <Container>
-    <div class="text-center max-w-3xl mx-auto space-y-4">
-      <SubTitle2>
-        {projectsSection.subheading}
-      </SubTitle2>
-    </div>
     <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {
         projectsSection.projects.map((project) => {

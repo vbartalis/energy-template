@@ -6,6 +6,9 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<p class={`leading-tight mb-8 text-lg md:text-3xl font-semibold  ${className}`}>
+<p
+  class={`tracking-wide antialiased
+   mb-8 text-lg md:text-4xl font-extrabold  ${className}`}
+>
   <slot />
 </p>

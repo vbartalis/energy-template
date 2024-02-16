@@ -1,6 +1,7 @@
 ---
 import Container from "../../shared/Container.astro";
 import CtaButton from "../../shared/CtaButton.astro";
+import GradiantText from "../../shared/GradiantText.astro";
 import LazyImage from "../../shared/LazyImage.astro";
 import Paragraph from "../../shared/Paragraph.astro";
 import SubTitle2 from "../../shared/SubTitle2.astro";
@@ -21,7 +22,8 @@ const { className } = Astro.props;
   <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12 ">
     <div class="max-w-md mx-auto flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
       <SubTitle2>
-        {environmentalImpactSection.subheading}
+        {environmentalImpactSection.subheading1_1}
+        <GradiantText>{environmentalImpactSection.subheading1_2}</GradiantText>
       </SubTitle2>
       <Paragraph>
         {environmentalImpactSection.description}

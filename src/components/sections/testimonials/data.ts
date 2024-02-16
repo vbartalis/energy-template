@@ -4,7 +4,8 @@ import img3 from "./assets/person3.png";
 
 export const testimonialsSection = {
   title: "What Our Customers Say",
-  subheading: "Hear from Those Who Have Embraced Sustainable Living",
+  subheading1_1: "Hear from Those",
+  subheading1_2: " Who Have Embraced Sustainable Living",
   testimonials: [
     {
       name: "Emily Johnson",
