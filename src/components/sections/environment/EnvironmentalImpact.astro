@@ -20,7 +20,12 @@ const { className } = Astro.props;
     <Title2>{environmentalImpactSection.title}</Title2>
   </Container>
   <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12 ">
-    <div class="max-w-md mx-auto flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
+    <!-- <div
+      class="max-w-md mx-auto flex midmd:w-7/12 lg:w-3/4 flex-col align-self-start text-start"
+    > -->
+    <div
+      class="max-w-md mr-auto w-11/12 flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col"
+    >
       <SubTitle2>
         {environmentalImpactSection.subheading1_1}
         <GradiantText>{environmentalImpactSection.subheading1_2}</GradiantText>
@@ -46,24 +51,25 @@ const { className } = Astro.props;
         <CtaButton>{environmentalImpactSection.button}</CtaButton>
       </div>
     </div>
-
     <div
-      class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-[587px]"
+      class="midmd:max-w-none flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto"
     >
-      <LazyImage
+      <!-- <div
+      class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex w-11/12 midmd:w-5/12 lg:w-1/4 midmd:h-[587px]"
+    > -->
+      <!-- <LazyImage
         src={environmentalImpactSection.visual}
         alt="environmental impact"
         height="587"
         width="388"
         class="w-full h-full object-cover rounded-2xl"
-      />
-      <!--<Image
-        src={img}
-        alt="banner image"
-        width="1920"
-        height="2898"
-        class="w-full h-full object-cover rounded-2xl"
       /> -->
+      <LazyImage
+        src={environmentalImpactSection.visual}
+        alt="environmental impact"
+        width="700"
+        class="w-full h-full object-cover rounded-2xl"
+      />
     </div>
   </Container>
 </section>
