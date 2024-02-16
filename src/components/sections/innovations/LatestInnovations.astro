@@ -17,13 +17,11 @@ const { className } = Astro.props;
 <section id="innovations" class=`${className}`>
   <Container>
     <Title2>{innovationsSection.title}</Title2>
+    <SubTitle2>
+      {innovationsSection.subheading}
+    </SubTitle2>
   </Container>
   <Container>
-    <div class="mx-auto flex flex-col items-center justify-center text-center">
-      <SubTitle2>
-        {innovationsSection.subheading}
-      </SubTitle2>
-    </div>
     {
       innovationsSection.innovations.map((solution, index: number) => {
         const oddIndex = index % 2 === 0;

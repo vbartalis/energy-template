@@ -27,7 +27,11 @@ const { name, visual, occupation, quote } = Astro.props;
     </div>
     <div class="flex w-full flex-col gap-0.5">
       <div class="flex items-center justify-between">
-        <h5 class="block text-xl font-semibold leading-snug">{name}</h5>
+        <h5
+          class="block text-xl font-semibold leading-snug text-primary-900 dark:text-primary-100"
+        >
+          {name}
+        </h5>
         <div class="5 flex items-center gap-0">
           {
             [...Array(5).keys()].map(() => {
@@ -49,12 +53,16 @@ const { name, visual, occupation, quote } = Astro.props;
           }
         </div>
       </div>
-      <p class="block font-light leading-relaxed">{occupation}</p>
+      <p
+        class="block font-light leading-relaxed text-primary-900 dark:text-primary-300/50"
+      >
+        {occupation}
+      </p>
     </div>
   </div>
   <div class="p-4">
     <p class="block font-sans font-light leading-relaxed italic">
-      {quote}
+      "{quote}"
     </p>
   </div>
 </div>
