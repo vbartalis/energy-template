@@ -6,6 +6,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site: "https://https://energy.template.vbartalis.dev",
+  site: "https://energy.template.vbartalis.dev",
   base: "",
 });
