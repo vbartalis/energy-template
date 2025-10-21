@@ -20,6 +20,9 @@
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1"
   },
+  "engines": {
+    "node": "20"
+  },
   "node": "20.11.0",
   "volta": {
     "node": "20.11.0"
