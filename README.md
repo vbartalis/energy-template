@@ -11,7 +11,7 @@ A modern, responsive website template for green energy companies built with Astr
 
 **[🎨 Get Template on Astro](https://astro.build/themes/details/energy-company-template/)**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://vbartalis.github.io/energy-template/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://energy-template.vbartalis.dev/)
 [![Astro Template](https://img.shields.io/badge/Astro-Template-orange?style=for-the-badge)](https://astro.build/themes/details/energy-company-template/)
 
 ## 🖼️ Screenshots
