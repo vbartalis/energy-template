@@ -51,13 +51,18 @@ const { title } = Astro.props;
         changeThemeToDark();
       }
       // Whenever the user explicitly chooses light mode, previously it was dark mode
-      if (localAppTheme === "dark") {
+      else if (localAppTheme === "dark") {
         changeThemeToLight();
       }
-      if (!localAppTheme) {
+      // If no theme is set, toggle from current system theme
+      else {
         console.log("previously it was not set");
-        // Whenever the user explicitly chooses to respect the OS preference
-        detectSystemTheme(true);
+        // Check current state and toggle to opposite
+        if (document.documentElement.classList.contains("dark")) {
+          changeThemeToLight();
+        } else {
+          changeThemeToDark();
+        }
       }
     }
 
